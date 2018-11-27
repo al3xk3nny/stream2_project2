@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from accounts.views import signup, show_profile
+from accounts.views import show_index, signup, show_profile
+
+from opportunities import urls as opportunities_urls
 
 from django.views.static import serve
 from django.conf import settings
@@ -24,9 +26,13 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     
+    path("", show_index, name="show_index"),
+    
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/signup/", signup, name="signup"),
     path("accounts/profile/", show_profile, name="profile"),
+    
+    path("posts/", include(opportunities_urls)),
     
     path("media/<path:path>", serve, {"document_root": settings.MEDIA_ROOT}),
 ]

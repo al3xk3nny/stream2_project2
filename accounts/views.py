@@ -4,6 +4,9 @@ from .forms import SignUpForm, ProfileForm
 
 # Create your views here.
 
+def show_index(request):
+    return render(request, "index.html")
+
 def signup(request):
     if request.method == "POST":
         user_form = SignUpForm(request.POST)
