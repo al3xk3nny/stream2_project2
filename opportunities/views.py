@@ -16,11 +16,11 @@ def read_post(request):
 def write_post(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
-        p = form.save(commit=Flase)
+        p = form.save(commit=False)
         p.author = request.user
         p.save()
         
-        return redirect(read-post, p.id)
+        return redirect(read_post)
     else:
         form = PostForm()
         
