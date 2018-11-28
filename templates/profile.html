@@ -7,7 +7,7 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Account Details<span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="{% url 'profile' user.id %}">Account Details<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
         
@@ -62,7 +62,7 @@
                 <p>{{ user.last_name }}</p>
 
                 <h6>Phone Number</h6>
-                <p>{{ user.phone_number }}</p>
+                <p>{{ user.profile.phone_number }}</p>
 
                 <h6>Email</h6>
                 <p>{{ user.email }}</p>

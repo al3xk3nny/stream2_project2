@@ -1,5 +1,5 @@
 from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .forms import SignUpForm, ProfileForm
 from django.contrib.auth.models import User, Group
 
