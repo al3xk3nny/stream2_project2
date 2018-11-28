@@ -1,12 +1,17 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, ProfileForm
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import User, Group
 
 # Create your views here.
 
 def show_index(request):
-    return render(request, "index.html")
+    if request.user.is_authenticated:
+        return redirect("read_post")
+    else:    
+        return render(request, "index.html")
+
+
 
 def signup(request):
     if request.method == "POST":
@@ -30,8 +35,10 @@ def signup(request):
     else:
         user_form = SignUpForm()
         profile_form = ProfileForm()
-    return render(request, "registration/signup.html", {"user_form": user_form, "profile_form": profile_form})
+        return render(request, "registration/signup.html", {"user_form": user_form, "profile_form": profile_form})
 
 
-def show_profile(request):
-    return render(request, "profile.html")
+
+def show_profile(request, id):
+    user = User.objects.get(id=id)
+    return render(request, "profile.html", {"user": user})

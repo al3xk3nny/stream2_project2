@@ -52,14 +52,7 @@
                         <a class="nav-link" href="#"><i class="fa fa-sign-out"></i> Upgrade</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a>
-                    </li>
-                {%  else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signup' %}"><i class="fa fa-user-plus"></i> Sign up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                        <a class="nav-link" href="{% url 'profile' user.id %}"><i class="fa fa-user"></i> Profile</a>
                     </li>
                 {% endif %}
             </ul>
@@ -79,12 +72,6 @@
     </main>
     
     <footer>
-        
-        <div class="container">
-            
-            <p class="fixed-bottom">Footer</p>
-            
-        </div>
         
     </footer>
     
