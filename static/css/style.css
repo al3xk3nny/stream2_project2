@@ -8,7 +8,7 @@ body {
 }
 
 
-/*Styling for index page log in and sign up functionality*/
+/* Styling for index page log in and sign up functionality*/
 
 .centered {
     padding: 100px 0;
@@ -47,3 +47,15 @@ body {
 /*  font-size: .75rem;*/
 /*  text-transform: uppercase;*/
 /*}*/
+
+
+/* Styling for profile page body*/
+.profile-body {
+    padding-left: 100px;
+}
+
+/* Styling for profile welcome*/
+.row-welcome {
+    background-color: gray;
+    padding: 20px 0;
+}

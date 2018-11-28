@@ -1,6 +1,7 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, ProfileForm
+from django.contrib.auth.models import Group
 
 # Create your views here.
 
@@ -15,12 +16,17 @@ def signup(request):
             user = user_form.save()
             profile = profile_form.save(commit=False)
             profile.user = user 
-            profile.save() 
+            profile.save()
+            
+            if "type" in request.GET:
+                group = Group.objects.get(name=request.GET["type"])
+                group.user_set.add(user)
+            
             username = user_form.cleaned_data.get("username")
             raw_password = user_form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect("index")
+            return redirect("read_post")
     else:
         user_form = SignUpForm()
         profile_form = ProfileForm()
