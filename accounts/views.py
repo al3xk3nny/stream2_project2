@@ -32,10 +32,6 @@ def signup(request):
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             return redirect("read_post")
-            
-        else:
-            print(user_form.errors)
-            print(profile_form.errors)
     else:
         user_form = SignUpForm()
         profile_form = ProfileForm()
