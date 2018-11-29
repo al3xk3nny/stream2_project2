@@ -29,7 +29,11 @@ def write_post(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         p = form.save(commit=False)
-        p.author = request.user # Come back to this
+        if is_in_group(request.user, "marketer"):
+            p.type = "marketer"
+        else:
+            p.type = "producer"
+        p.author = request.user
         p.save()
         
         return redirect(read_post)

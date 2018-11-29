@@ -17,10 +17,10 @@
                 </h6>
                 <ul class="nav flex-column px-3 mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All</a>
+                        <a class="nav-link" href="#">Your Opportunities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Active</a>
+                        <a class="nav-link" href="#">Inbox</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a>
@@ -39,7 +39,7 @@
         
         <div class="row row-welcome">
             <div class="col-md-12">
-                <h3>Hello Alex</h3>
+                <h3>Hello {{ user.first_name }}</h3>
             </div>
         </div>
         

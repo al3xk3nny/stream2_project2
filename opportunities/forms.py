@@ -4,4 +4,4 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model=Post
-        exclude = ["created_date", "author"]
+        exclude = ["created_date", "author", "type"]
