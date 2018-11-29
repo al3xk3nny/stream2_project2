@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from .models import Post
+from .models import Post, Message
 from .forms import PostForm
 from django.contrib.auth.models import User
 
@@ -31,8 +31,9 @@ def your_posts(request):
 
 
 def show_inbox(request):
+    messages = Message.objects.filter()
     
-    return render(request, "opportunities/inbox.html")
+    return render(request, "opportunities/inbox.html", {"messages": messages})
 
 
 @login_required
