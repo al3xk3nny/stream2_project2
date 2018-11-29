@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    {% include "profile_menu.html" %} 
+    
+    <div class="profile-body">
+        
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Request from Alex
+                        </button>
+                    </h5>
+                </div>
+        
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        
+                        <div class="row">
+                        
+                            <div class="col-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="#" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Original Title</h5>
+                                        <p class="card-text">Original Description</p>
+                                        <p class="card-text">Date</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="#" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Request Title</h5>
+                                        <p class="card-text">Request Description</p>
+                                        <p class="card-text">Date</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">I'd Like to get in touch</h5>
+                                        <p class="card-text">Name:</p>
+                                        <p class="card-text">Alex Kenny</p>
+                                        <p class="card-text">Email:</p>
+                                        <p class="card-text">alex@example.com</p>
+                                        <p class="card-text">Phone Number:</p>
+                                        <p class="card-text">+353876543253</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div> 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+{% endblock %}    
+    

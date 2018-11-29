@@ -25,9 +25,14 @@ def read_posts(request):
 
 
 def your_posts(request):
-    posts = Post.objects.filter()
+    posts = Post.objects.filter(author=request.user)
     
     return render(request, "opportunities/your_post_list.html", {"posts": posts})
+
+
+def show_inbox(request):
+    
+    return render(request, "opportunities/inbox.html")
 
 
 @login_required
