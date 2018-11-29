@@ -44,7 +44,7 @@
     <header>
             
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Right Place</a>    
+            <a class="navbar-brand" href="{% url 'read_posts' %}">Right Place</a>    
             
             <ul class="nav">
                 {% if user.is_authenticated %}

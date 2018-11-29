@@ -14,7 +14,7 @@ def is_in_group(user, group_name):
 
 # Create your views here.
 
-def read_post(request):
+def read_posts(request):
     if is_in_group(request.user, "marketer"):
         to_view = "producer"
     else:
@@ -22,6 +22,12 @@ def read_post(request):
     posts = Post.objects.filter(type = to_view)
     
     return render(request, "opportunities/post_list.html", {"posts": posts})
+
+
+def your_posts(request):
+    posts = Post.objects.filter()
+    
+    return render(request, "opportunities/your_post_list.html", {"posts": posts})
 
 
 @login_required

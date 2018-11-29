@@ -7,7 +7,7 @@ from django.contrib.auth.models import User, Group
 
 def show_index(request):
     if request.user.is_authenticated:
-        return redirect("read_post")
+        return redirect("read_posts")
     else:    
         return render(request, "index.html")
 
@@ -31,7 +31,7 @@ def signup(request):
             raw_password = user_form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect("read_post")
+            return redirect("read_posts")
     else:
         user_form = SignUpForm()
         profile_form = ProfileForm()

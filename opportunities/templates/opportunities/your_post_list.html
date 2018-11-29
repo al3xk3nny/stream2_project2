@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    {% include "profile_menu.html" %}
+    
+    <div class="profile-body">
+    
+        <div class="row">
+        
+        {% for post in posts %}
+        
+            <div class="col-4">
+                
+                <div class="card mb-5" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content }}</p>
+                        <p class="card-text">{{ post.created_date }}</p>
+                    </div>
+                </div>
+            
+            </div>    
+        
+        {% endfor %}
+    
+        </div> 
+        
+    </div>    
+
+{% endblock %}
