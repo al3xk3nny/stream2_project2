@@ -56,6 +56,20 @@ def write_post(request):
 
 
 @login_required
+def edit_post(request, id):
+    post = get_object_or_404(Post, pk=id)
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES, instance=post)
+        form.save()
+        
+        return redirect(your_posts)
+    else:
+        form = PostForm(instance=post)
+        
+        return render(request, "opportunities/post_edit_form.html", {"form": form})
+
+
+@login_required
 def write_message(request, id):
     if request.method == "POST":
         post = get_object_or_404(Post, pk=id)
