@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Post, Message
-from .forms import PostForm
+from .forms import PostForm, MessageForm
 from django.contrib.auth.models import User
 
 
@@ -48,8 +48,25 @@ def write_post(request):
         p.author = request.user
         p.save()
         
-        return redirect(read_post)
+        return redirect(read_posts)
     else:
         form = PostForm()
         
         return render(request, "opportunities/post_form.html", {"form": form})
+
+
+@login_required
+def write_message(request, id):
+    if request.method == "POST":
+        post = get_object_or_404(Post, pk=id)
+        form = MessageForm(request.POST, request.FILES)
+        m = form.save(commit=False)
+        m.author = request.user
+        m.recipient = post.author
+        m.save()
+        
+        return redirect(read_posts)
+    else:
+        form = MessageForm()
+        
+        return render(request, "opportunities/message_form.html", {"form": form})

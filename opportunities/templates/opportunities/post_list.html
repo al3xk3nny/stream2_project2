@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load bootstrap_tags %}
 
 {% block content %}
     
@@ -15,7 +16,7 @@
                     <p class="card-text">{{ post.content }}</p>
                     <p class="card-text">{{ post.created_date }}</p>
                     
-                    <a href="#" class="card-link" data-toggle="modal" data-target="#exampleModal">Interested</a>
+                    <a class="card-link" href="{% url 'write_message' post.id %}">Interested</a>
                     
                 </div>
             </div>
@@ -31,14 +32,11 @@
                         </div>
                         <div class="modal-body">
                             
-                            <div class="col-4">
-                                <p>REQUEST FORM GOES HERE</p>
-                            </div>
+                            <p>Hi There</p>   
                             
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send Request</button>
                         </div>
                     </div>
                 </div>
