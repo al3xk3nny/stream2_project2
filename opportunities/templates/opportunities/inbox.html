@@ -14,13 +14,13 @@
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  Request from {{ message.author.first_name }}
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_{{ message.id }}" aria-expanded="true" aria-controls="collapseOne">
+                                  Message from {{ message.author.first_name }} re. {{ message.post.title }} - post number:{{ message.post.id }}, post author: {{ message.recipient.first_name }}
                                 </button>
                             </h5>
                         </div>
                 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapse_{{ message.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
                                 
                                 <div class="row">

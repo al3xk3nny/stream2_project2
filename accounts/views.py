@@ -41,4 +41,5 @@ def signup(request):
 
 def show_profile(request, id):
     user = User.objects.get(id=id)
-    return render(request, "profile.html", {"user": user})
+    group = user.groups.all()[0]
+    return render(request, "profile.html", {"user": user, "group": group})

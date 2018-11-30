@@ -31,7 +31,7 @@ def your_posts(request):
 
 
 def show_inbox(request):
-    messages = Message.objects.filter()
+    messages = Message.objects.filter(recipient=request.user)
     
     return render(request, "opportunities/inbox.html", {"messages": messages})
 
