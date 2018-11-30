@@ -27,7 +27,7 @@
                                 
                                     <div class="col-4">
                                         <div class="card">
-                                            <img class="card-img-top" src="#" alt="Card image cap">
+                                            <img class="card-img-top" src="{{ MEDIA_URL }}{{ message.post.image }}" alt="Card image cap">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ message.post.title }}</h5>
                                                 <p class="card-text">{{ message.post.content }}</p>
@@ -38,7 +38,7 @@
                                     
                                     <div class="col-4">
                                         <div class="card">
-                                            <img class="card-img-top" src="#" alt="Card image cap">
+                                            <img class="card-img-top" src="{{ MEDIA_URL }}{{ message.image }}" alt="Card image cap">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ message.title }}</h5>
                                                 <p class="card-text">{{ message.content }}</p>
