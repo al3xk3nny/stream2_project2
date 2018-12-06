@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from accounts.views import show_index, signup, show_profile
+from accounts.views import show_index, signup, my_profile
 
 from opportunities import urls as opportunities_urls
 
@@ -30,7 +30,7 @@ urlpatterns = [
     
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/signup/", signup, name="signup"),
-    path("accounts/profile/<int:id>", show_profile, name="profile"),
+    path("accounts/profile/<int:id>", my_profile, name="profile"),
     
     path("posts/", include(opportunities_urls)),
     
