@@ -30,7 +30,7 @@ urlpatterns = [
     
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/signup/", signup, name="signup"),
-    path("accounts/profile/<int:id>", my_profile, name="profile"),
+    path("accounts/profile/", my_profile, name="my_profile"),
     
     path("posts/", include(opportunities_urls)),
     

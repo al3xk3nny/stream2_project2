@@ -7,7 +7,7 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'profile' user.id %}">Your Details<span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="{% url 'my_profile' %}">Your Details<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
         
@@ -17,10 +17,10 @@
                 </h6>
                 <ul class="nav flex-column px-3 mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'your_posts' %}">Your Opportunities</a>
+                        <a class="nav-link" href="{% url 'my_posts' %}">Your Opportunities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'show_inbox' %}">Inbox</a>
+                        <a class="nav-link" href="{% url 'my_inbox' %}">Inbox</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a>

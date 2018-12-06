@@ -39,10 +39,6 @@ def signup(request):
 
 
 
-def my_profile(request, id):
-    user = User.objects.get(id=id)
-    if request.user == user:
-        group = user.groups.all()[0]
-        return render(request, "profile.html", {"user": user, "group": group})
-    else:
-        return redirect("profile", request.user.id)
+def my_profile(request):
+    group = request.user.groups.all()[0]
+    return render(request, "profile.html", {"group": group})

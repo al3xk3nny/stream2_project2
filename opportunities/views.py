@@ -24,13 +24,13 @@ def read_posts(request):
     return render(request, "opportunities/post_list.html", {"posts": posts})
 
 
-def your_posts(request):
+def my_posts(request):
     posts = Post.objects.filter(author=request.user)
     
-    return render(request, "opportunities/your_post_list.html", {"posts": posts})
+    return render(request, "opportunities/my_post_list.html", {"posts": posts})
 
 
-def show_inbox(request):
+def my_inbox(request):
     messages = Message.objects.filter(recipient=request.user)
     
     return render(request, "opportunities/inbox.html", {"messages": messages})
@@ -48,7 +48,7 @@ def write_post(request):
         p.author = request.user
         p.save()
         
-        return redirect(read_posts)
+        return redirect(my_posts)
     else:
         form = PostForm()
         
@@ -62,11 +62,18 @@ def edit_post(request, id):
         form = PostForm(request.POST, request.FILES, instance=post)
         form.save()
         
-        return redirect(your_posts)
+        return redirect(my_posts)
     else:
         form = PostForm(instance=post)
         
         return render(request, "opportunities/post_edit_form.html", {"form": form})
+
+
+@login_required
+def delete_post(request):
+    get_object_or_404(Post, pk=request.POST["post"]).delete()
+    return redirect(my_posts)
+
 
 
 @login_required
@@ -77,6 +84,7 @@ def write_message(request, id):
         m = form.save(commit=False)
         m.author = request.user
         m.recipient = post.author
+        m.post = post
         m.save()
         
         return redirect(read_posts)
@@ -84,3 +92,9 @@ def write_message(request, id):
         form = MessageForm()
         
         return render(request, "opportunities/message_form.html", {"form": form})
+
+
+@login_required
+def delete_message(request):
+    get_object_or_404(Message, pk=request.POST["message"]).delete()
+    return redirect(my_inbox)
