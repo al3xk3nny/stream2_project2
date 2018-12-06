@@ -18,6 +18,8 @@ from django.urls import path, include
 
 from accounts.views import show_index, signup, my_profile
 
+from billing.views import add_credit_card, remove_credit_card, make_payment, subscribe, unsubscribe
+
 from opportunities import urls as opportunities_urls
 
 from django.views.static import serve
@@ -31,6 +33,12 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/signup/", signup, name="signup"),
     path("accounts/profile/", my_profile, name="my_profile"),
+    
+    path('billing/add_credit_card/', add_credit_card, name='add_credit_card'),
+    path('billing/remove_credit_card/', remove_credit_card, name='remove_credit_card'),
+    path('billing/make_payment/', make_payment, name='make_payment'),
+    path('billing/subscribe/', subscribe, name='subscribe'),
+    path('billing/unsubscribe/', unsubscribe, name='unsubscribe'),
     
     path("posts/", include(opportunities_urls)),
     

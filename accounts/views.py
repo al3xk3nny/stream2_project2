@@ -2,6 +2,9 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, HttpResponse
 from .forms import SignUpForm, ProfileForm
 from django.contrib.auth.models import User, Group
+from datetime import date
+
+import stripe
 
 # Create your views here.
 
@@ -41,4 +44,19 @@ def signup(request):
 
 def my_profile(request):
     group = request.user.groups.all()[0]
-    return render(request, "profile.html", {"group": group})
+    if request.user.profile.subscription_id:
+        subscription = stripe.Subscription.retrieve(request.user.profile.subscription_id)
+        end_date_str = subscription.current_period_end
+        end_date = date.fromtimestamp(float(end_date_str))
+        start_date_str = subscription.current_period_start
+        start_date = date.fromtimestamp(float(start_date_str))
+        if subscription.canceled_at:
+            cancelled_at_str = subscription.canceled_at
+            cancelled_on = date.fromtimestamp(float(cancelled_at_str))
+        else:
+            cancelled_on = "not_applicable"
+        
+        return render(request, "profile.html", {"subscription":subscription, "end_date":end_date, "start_date":start_date, "cancelled_on":cancelled_on, "group": group})
+    else:    
+        
+        return render(request, "profile.html", {"group": group})
