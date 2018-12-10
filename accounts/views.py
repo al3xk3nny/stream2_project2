@@ -3,8 +3,11 @@ from django.shortcuts import render, redirect, HttpResponse
 from .forms import SignUpForm, ProfileForm
 from django.contrib.auth.models import User, Group
 from datetime import date
+from django.conf import settings
 
 import stripe
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
 

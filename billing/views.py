@@ -31,19 +31,6 @@ def remove_credit_card(request):
     request.user.profile.save()
     return redirect("my_profile")
     
-    
-def make_payment(request):
-    amount = int(request.POST['amount'])
-    total_in_cent = amount * 100
-    
-    charge = stripe.Charge.create(
-            amount=total_in_cent,
-            currency='EUR',
-            customer=request.user.profile.stripe_id,
-            )
-
-    return redirect("my_profile")
-    
 
 def subscribe(request):
     if request.method == "POST":

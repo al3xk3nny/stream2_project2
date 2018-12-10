@@ -1,6 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
+from django.conf import settings
+
+import stripe
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+
+
 
 # Create your models here.
 
@@ -12,6 +20,14 @@ class Profile(models.Model):
     stripe_id = models.CharField(max_length=80, blank=True, null=True)
     card_ending = models.CharField(max_length=4, blank=True, null=True)
     subscription_id = models.CharField(max_length=80, blank=True, null=True)
+    
+    @property
+    def active_subscription(self):
+        if self.subscription_id:
+            subscription = stripe.Subscription.retrieve(self.subscription_id)
+            return subscription.plan.active
+        else:
+            return False
     
     def __str__(self):
         return "{0} {1}".format(self.user.first_name, self.user.last_name)

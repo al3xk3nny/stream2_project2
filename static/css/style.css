@@ -59,3 +59,9 @@ body {
     background-color: gray;
     padding: 20px 0;
 }
+
+
+/* Styling to disable link for profile menu list items*/
+    .noclick  {
+      pointer-events: none;
+    }
