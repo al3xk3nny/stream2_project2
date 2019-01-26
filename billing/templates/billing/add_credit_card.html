@@ -15,14 +15,45 @@
 
 {% block content %}
  
-        <h1>Add Credit Card</h1>
+        <h1>Billing</h1>
         
-            <form role="form" method="post" id="payment-form">
-                {{ form | as_bootstrap }}
-                    {% csrf_token %}
-                    <div class="form-group col-md-12">
-                        <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Add Card">
-                    </div>
-            </form>
+            {% if user.profile.stripe_id %}
+    
+                {% if user.profile.card_ending %}
+                
+                    <p>You have already added a card ending {{ user.profile.card_ending }}</p>
+                
+                    <a href="{% url 'subscribe' %}" class="btn btn-success">Continue with this card</a>
+                    
+                    <form method="post" action="{% url "remove_credit_card" %}">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="submit">Remove card</button>
+                    </form>
+                
+                {% else %}
+                
+                    <p>We do not have a credit card on file. Add one below.</p>
+            
+                    <form role="form" method="post" id="payment-form">
+                        {{ form | as_bootstrap }}
+                            {% csrf_token %}
+                            <div class="form-group col-md-12">
+                                <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Add Card">
+                            </div>
+                    </form>
+                
+                {% endif %}
+                
+            {% else %}
+            
+                <form role="form" method="post" id="payment-form">
+                    {{ form | as_bootstrap }}
+                        {% csrf_token %}
+                        <div class="form-group col-md-12">
+                            <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Add Card">
+                        </div>
+                </form>
+                
+            {% endif %}
 
 {% endblock %}

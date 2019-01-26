@@ -80,7 +80,7 @@
                     {% elif subscription.status == "canceled" %}
                         <p>Your {{subscription.plan.nickname}} subscription has expired.</p>
                         <p>For further details on our subscription plans and to re-subscribe, please visit our subscriptions page.</p>
-                        <a href="{% url 'subscribe' %}" class="btn btn-success">Subscriptions page</a> 
+                        <a href="{% url 'add_credit_card' %}" class="btn btn-success">Subscriptions page</a> 
                     {% endif %}
                         
                 {% else %}

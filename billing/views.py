@@ -26,7 +26,7 @@ def add_credit_card(request):
         
         
 def remove_credit_card(request):
-    request.user.profile.stripe_id = ""
+    # request.user.profile.stripe_id = ""
     request.user.profile.card_ending = ""
     request.user.profile.save()
     return redirect("add_credit_card")
