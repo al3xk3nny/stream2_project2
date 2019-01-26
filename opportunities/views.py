@@ -5,6 +5,8 @@ from .models import Post, Message
 from .forms import PostForm, MessageForm
 from django.contrib.auth.models import User
 
+import stripe
+
 
 # Helper for checking group type.
 
@@ -15,13 +17,15 @@ def is_in_group(user, group_name):
 # Create your views here.
 
 def read_posts(request):
+    subscription = stripe.Subscription.retrieve(request.user.profile.subscription_id)
     if is_in_group(request.user, "marketer"):
         to_view = "producer"
     else:
         to_view = "marketer"
     posts = Post.objects.filter(type = to_view)
     
-    return render(request, "opportunities/post_list.html", {"posts": posts})
+    
+    return render(request, "opportunities/post_list.html", {"subscription":subscription, "posts": posts})
 
 
 def my_posts(request):

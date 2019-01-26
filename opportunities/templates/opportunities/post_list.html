@@ -16,13 +16,23 @@
                     <p class="card-text">{{ post.content }}</p>
                     <p class="card-text">{{ post.created_date }}</p>
                     
-                    {% if user.profile.active_subscription %}
-                        <a class="btn btn-link" href="{% url 'write_message' post.id %}" role="buton">Interested</a>
+                    {% if request.user.profile.subscription_id %}
+                    
+                        {% if subscription.status == "active" %}
+                            <a class="btn btn-link" href="{% url 'write_message' post.id %}" role="button">Interested</a>
+                        {% elif subscription.status == "canceled" %}
+                            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="You need to be subscribed.">
+                                <a class="btn btn-link disabled noclick" href="{% url 'write_message' post.id %}" role="button">Interested</a>
+                            </span>
+                        {% endif %}
+                    
                     {% else %}
+                        
                         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="You need to be subscribed">
-                            <a class="btn btn-link disabled noclick" href="{% url 'write_message' post.id %}" role="buton">Interested</a>
+                            <a class="btn btn-link disabled noclick" href="{% url 'write_message' post.id %}" role="button">Interested</a>
                         </span>
-                        <a class="btn btn-link" href="{% url 'my_profile' %}" role="button">Upgrade</a>
+                            <a class="btn btn-link" href="{% url 'add_credit_card' %}" role="button">Subscribe</a>
+                        
                     {% endif %}
                     
                 </div>

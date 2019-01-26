@@ -3,18 +3,18 @@
 {% block content %}
     <h1>Subscribe</h1>
     
-    <h2>Annual Subscription</h2>
-    <form method="POST" action='{% url 'subscribe' %}'>
-        {% csrf_token %}
-        <input type="hidden" value="plan_E6GCi5gOfpE8MZ" name="plan"/>
-        <input class="btn btn-default" type="submit" value="Purchase €100 per year"/>
-    </form>
-    
-    <h2>Monthly Subscription</h2>
-    <form method="POST" action='{% url 'subscribe' %}'>
-        {% csrf_token %}
-        <input type="hidden" value="plan_E6GBb256wFmazr" name="plan"/>
-        <input class="btn btn-default" type="submit" value="Purchase €10 per month"/>
-    </form>
-
+        <h2>Annual Subscription</h2>
+        <form method="POST" action='{% url 'subscribe' %}'>
+            {% csrf_token %}
+            <input type="hidden" value="plan_E6GCi5gOfpE8MZ" name="plan"/>
+            <input class="btn btn-default" type="submit" value="Purchase €100 per year"/>
+        </form>
+        
+        <h2>Monthly Subscription</h2>
+        <form method="POST" action='{% url 'subscribe' %}'>
+            {% csrf_token %}
+            <input type="hidden" value="plan_E6GBb256wFmazr" name="plan"/>
+            <input class="btn btn-default" type="submit" value="Purchase €10 per month"/>
+        </form>
+        
 {% endblock %}

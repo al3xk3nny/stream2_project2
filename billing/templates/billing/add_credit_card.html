@@ -14,18 +14,15 @@
 {% endblock %}
 
 {% block content %}
-
-    <h1>Add Credit Card</h1>
-    
-    <form role="form" method="post" id="payment-form">
-    
-        {{ form | as_bootstrap }}
-    
-        {% csrf_token %}
-    
-        <div class="form-group col-md-12">
-          <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Add Card">
-        </div>
-    </form>
+ 
+        <h1>Add Credit Card</h1>
+        
+            <form role="form" method="post" id="payment-form">
+                {{ form | as_bootstrap }}
+                    {% csrf_token %}
+                    <div class="form-group col-md-12">
+                        <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Add Card">
+                    </div>
+            </form>
 
 {% endblock %}
