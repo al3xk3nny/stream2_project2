@@ -4,12 +4,24 @@
 {% block content %}
     
     <div class="row">
+        
+        <div class="col-12">
+            
+            <p>You are logged in as a {{ group }}. Below are product placement opportunities looking to connect. Click Interested to register your interest. The opportunity owner will be provided with your contact details and will be in touch if there is a match.</p>
+            
+            <p>Alternaively, click <a href="{% url 'my_profile' %}">here</a> to visit your profile where you can add an opportunity of your own.</p>
+            
+        </div>
+        
+    </div>
+    
+    <div class="row">
     
     {% for post in posts %}
     
-        <div class="col-4">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
             
-            <div class="card mb-5" style="width: 20rem;">
+            <div class="card mb-5 card_post-size">
                 <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.image }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>

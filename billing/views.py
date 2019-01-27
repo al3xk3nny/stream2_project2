@@ -15,9 +15,12 @@ def add_credit_card(request):
                 source=token,
                 email=request.user.email,
                 )
+            
             request.user.profile.stripe_id = customer.id
             request.user.profile.card_ending = customer.sources.data[0].last4
+            
             request.user.profile.save()
+            
             return redirect("billing/subscribe.html")
     else:
         form = CreditCardForm()
