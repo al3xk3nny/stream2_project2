@@ -4,15 +4,15 @@
     
     {% include "profile_menu.html" %}
     
-    <div class="profile-body">
+    <div class="profile_body">
     
         <div class="row">
         
         {% for post in posts %}
         
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 
-                <div class="card mb-5" style="width: 20rem;">
+                <div class="card mb-5 card_post-size">
                     <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.image }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
