@@ -4,47 +4,89 @@
     
     {% include "profile_menu.html" %} 
     
-    <div class="profile-body">
+    <div class="profile_body">
         
-        <div class="row row-welcome">
-            <div class="col-md-12">
+        <div class="row profile_welcome">
+            <div class="col-12">
                 <h3>Hello {{ user.first_name }}</h3>
             </div>
         </div>
         
         <div class="row mt-4">
             
-            <div class="col-md-3">
+            <div class="col-6 col-sm-4 col-lg-2 mb-4">
                 
-                <img src="{{ MEDIA_URL }}{{ user.profile.image }}" alt="Profile image" width="200px" height="200px" />
+                <img class="profile_image" src="{{ MEDIA_URL }}{{ user.profile.image }}" alt="Profile image" width="200px" height="200px" />
                 
             </div>
             
-            <div class="col-md-3">
+            <div class="col-12 col-sm-8 col-lg-5 mb-4">
                 
                 <h4>Your Details</h4>
                 
-                <h6>Username</h6>
-                <p>{{ user.username }}</p>
+                <!--<div class="row">-->
+                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
+                <!--        <h6>Username</h6>-->
+                <!--        <p>{{ user.username }}</p>-->
+                <!--    </div>-->
+                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
+                <!--        <h6>Role</h6>-->
+                <!--        <p>{{ group }}</p>-->
+                <!--    </div>-->
+                <!--</div>    -->
                 
-                <h6>Role</h6>
-                <p>{{ group }}</p>
+                <!--<div class="row">    -->
+                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
+                <!--        <h6>First Name</h6>-->
+                <!--        <p>{{ user.first_name }}</p>-->
+                <!--    </div>-->
+                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
+                <!--        <h6>Last Name</h6>-->
+                <!--        <p>{{ user.last_name }}</p>-->
+                <!--    </div>-->
+                <!--</div>    -->
                 
-                <h6>First Name</h6>
-                <p>{{ user.first_name }}</p>
+                <!--<div class="row">    -->
+                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
+                <!--        <h6>Phone Number</h6>-->
+                <!--        <p>{{ user.profile.phone_number }}</p>-->
+                <!--    </div>-->
+                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
+                <!--        <h6>Email</h6>-->
+                <!--        <p>{{ user.email }}</p>-->
+                <!--    </div>-->
+                <!--</div>-->
+                
+                <table class="table profile-user-details">
+                    <tr>
+                        <th>Username:</th>
+                        <td>{{ user.username }}</td>
+                    </tr>
+                                        <tr>
+                        <th>Role:</th>
+                        <td>{{ group }}</td>
+                    </tr>
+                                        <tr>
+                        <th>First name:</th>
+                        <td>{{ user.first_name }}</td>
+                    </tr>
+                                        <tr>
+                        <th>Last name:</th>
+                        <td>{{ user.last_name }}</td>
+                    </tr>
+                                        <tr>
+                        <th>Phone number:</th>
+                        <td>{{ user.profile.phone_number }}</td>
+                    </tr>
+                                        <tr>
+                        <th>Email:</th>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                </table>
             
-                <h6>Last Name</h6>
-                <p>{{ user.last_name }}</p>
-
-                <h6>Phone Number</h6>
-                <p>{{ user.profile.phone_number }}</p>
-
-                <h6>Email</h6>
-                <p>{{ user.email }}</p>
-                
             </div>
             
-            <div class="col-md-6">
+            <div class="col-12 col-sm-8 offset-sm-4 col-lg-5 offset-lg-0 mb-4">
                     
                 <h4>Subscription</h4>
                 {% if request.user.profile.subscription_id %} 
@@ -60,7 +102,7 @@
                                 <td>{% if cancelled_on == "not_applicable" %} Active {% else %}<span style="color:#ff0000;">Cancelled on</span> {{ cancelled_on }} {% endif %}</td>
                             </tr>
                             <tr>
-                                <th>Valid From:</th>
+                                <th>Valid from:</th>
                                 <td>{{ start_date }}</td>
                             </tr>
                             <tr>
@@ -68,7 +110,7 @@
                                 <td>{{ end_date }}</td>
                             </tr>
                             <tr>
-                                <th>Auto-Renew on expiry:</th>
+                                <th>Auto-renew on expiry:</th>
                                 <td>{% if subscription.cancel_at_period_end == False %}Yes {% else %}No{% endif %}</td>
                             </tr>
                         </table>

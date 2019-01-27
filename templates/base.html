@@ -52,11 +52,11 @@
             
             <ul class="nav">
                 {% if user.is_authenticated %}
+                    <!--<li class="nav-item">-->
+                    <!--    <a class="nav-link" href="{% url 'my_profile' %}"><i class="fa fa-user"></i> Profile</a>-->
+                    <!--</li>-->
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'my_profile' %}"><i class="fa fa-user"></i> Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                        <a class="nav-link nav-link_log-out-col" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                     </li>    
                 {% endif %}
             </ul>
