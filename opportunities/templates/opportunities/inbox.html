@@ -2,7 +2,13 @@
 
 {% block content %}
     
-    {% include "profile_menu.html" %} 
+    {% if request.user.profile.subscription_id %}
+        {% if subscription.status == "active" %}
+            {% include "profile_menu_active.html" %}
+        {% elif subscription.status == "canceled" %}
+            {% include "profile_menu_cancelled.html" %}
+        {% endif %}
+    {% endif %}  
     
     <div class="profile_body">
         
