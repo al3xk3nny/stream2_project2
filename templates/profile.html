@@ -8,6 +8,8 @@
         {% elif subscription.status == "canceled" %}
             {% include "profile_menu_cancelled.html" %}
         {% endif %}
+    {% else %}
+        {% include "profile_menu_cancelled.html" %}    
     {% endif %}    
     
     <div class="profile_body">
@@ -29,39 +31,6 @@
             <div class="col-12 col-sm-8 col-lg-5 mb-4">
                 
                 <h4>Your Details</h4>
-                
-                <!--<div class="row">-->
-                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
-                <!--        <h6>Username</h6>-->
-                <!--        <p>{{ user.username }}</p>-->
-                <!--    </div>-->
-                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
-                <!--        <h6>Role</h6>-->
-                <!--        <p>{{ group }}</p>-->
-                <!--    </div>-->
-                <!--</div>    -->
-                
-                <!--<div class="row">    -->
-                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
-                <!--        <h6>First Name</h6>-->
-                <!--        <p>{{ user.first_name }}</p>-->
-                <!--    </div>-->
-                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
-                <!--        <h6>Last Name</h6>-->
-                <!--        <p>{{ user.last_name }}</p>-->
-                <!--    </div>-->
-                <!--</div>    -->
-                
-                <!--<div class="row">    -->
-                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
-                <!--        <h6>Phone Number</h6>-->
-                <!--        <p>{{ user.profile.phone_number }}</p>-->
-                <!--    </div>-->
-                <!--    <div class="col-12 col-sm-6 col-lg-12">-->
-                <!--        <h6>Email</h6>-->
-                <!--        <p>{{ user.email }}</p>-->
-                <!--    </div>-->
-                <!--</div>-->
                 
                 <table class="table profile-user-details">
                     <tr>
@@ -127,8 +96,7 @@
                         
                     {% elif subscription.status == "canceled" %}
                         <p>Your {{subscription.plan.nickname}} subscription has expired.</p>
-                        <p>For further details on our subscription plans and to re-subscribe, please visit our subscriptions page.</p>
-                        <a href="{% url 're_subscribe' %}" class="btn btn-success">Subscriptions page</a> 
+                        <a href="{% url 're_subscribe' %}" class="btn btn-success">Re-subscribe</a> 
                     {% endif %}
                         
                 {% else %}

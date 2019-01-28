@@ -8,7 +8,9 @@
         {% elif subscription.status == "canceled" %}
             {% include "profile_menu_cancelled.html" %}
         {% endif %}
-    {% endif %}  
+    {% else %}
+        {% include "profile_menu_cancelled.html" %}    
+    {% endif %}   
     
     <div class="profile_body">
         

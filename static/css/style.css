@@ -8,6 +8,15 @@ body {
     }
 }    
 
+/* Background image for index page*/
+
+body {
+    background-image: url('/static/images/bg_image-index.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .accountform {
     padding-top: 20px;
 }
