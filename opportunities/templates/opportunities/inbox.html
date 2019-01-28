@@ -6,6 +6,7 @@
     
     <div class="profile_body">
         
+        {% if request.user.message.post_id %}
         
             <div id="accordion">
                 
@@ -84,6 +85,12 @@
                 {% endfor %} 
             
             </div>
+            
+        {% else %}
+        
+            <p>You have no messages at this time.</p>
+        
+        {% endif %}
         
     </div>
     
