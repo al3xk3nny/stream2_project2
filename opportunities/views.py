@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Post, Message
 from .forms import PostForm, MessageForm
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group 
 
 import stripe
 
@@ -18,13 +18,14 @@ def is_in_group(user, group_name):
 
 def read_posts(request):
     group = request.user.groups.all()[0]
-    subscription = stripe.Subscription.retrieve(request.user.profile.subscription_id)
+    subscription = False
+    if request.user.profile.subscription_id:
+        subscription = stripe.Subscription.retrieve(request.user.profile.subscription_id)
     if is_in_group(request.user, "marketer"):
         to_view = "producer"
     else:
         to_view = "marketer"
     posts = Post.objects.filter(type = to_view)
-    
     
     return render(request, "opportunities/post_list.html", {"group": group, "subscription":subscription, "posts": posts})
 

@@ -18,7 +18,7 @@ from django.urls import path, include
 
 from accounts.views import show_index, signup, my_profile
 
-from billing.views import add_credit_card, remove_credit_card, subscribe, unsubscribe
+from billing.views import add_credit_card, re_subscribe, subscribe, unsubscribe
 
 from opportunities import urls as opportunities_urls
 
@@ -35,7 +35,7 @@ urlpatterns = [
     path("accounts/profile/", my_profile, name="my_profile"),
     
     path('billing/add_credit_card/', add_credit_card, name='add_credit_card'),
-    path('billing/remove_credit_card/', remove_credit_card, name='remove_credit_card'),
+    path('billing/re_subscribe/', re_subscribe, name='re_subscribe'),
     path('billing/subscribe/', subscribe, name='subscribe'),
     path('billing/unsubscribe/', unsubscribe, name='unsubscribe'),
     

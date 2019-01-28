@@ -15,22 +15,19 @@ def add_credit_card(request):
                 source=token,
                 email=request.user.email,
                 )
-            
             request.user.profile.stripe_id = customer.id
             request.user.profile.card_ending = customer.sources.data[0].last4
-            
             request.user.profile.save()
-            
-            return redirect("billing/subscribe.html")
+            return redirect("subscribe")
     else:
         form = CreditCardForm()
         return render(request, "billing/add_credit_card.html", {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY})
         
-        
-        
-def remove_credit_card(request):
-    # request.user.profile.stripe_id = ""
+
+def re_subscribe(request):
+    request.user.profile.stripe_id = ""
     request.user.profile.card_ending = ""
+    request.user.profile.subscription_id = ""
     request.user.profile.save()
     return redirect("add_credit_card")
 

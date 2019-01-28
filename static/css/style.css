@@ -25,9 +25,9 @@ body {
     color: white;
 }
 
-/* Styling for post list responsiveness*/
+/* Styling for card responsiveness*/
 
-.card_post-size {
+.card-size {
     width: 100%;
 }    
 
