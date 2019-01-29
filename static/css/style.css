@@ -1,5 +1,13 @@
 body {
-        padding-top: 60px;
+    padding-top: 60px;
+}
+
+footer {
+    padding-top: 60px;
+}
+
+a:hover {
+    color: #73D8D2;
     }
 
 /*@media only screen and (min-width: 960px) {*/
@@ -8,66 +16,111 @@ body {
 /*    }*/
 /*}*/
 
-/* Styling for navbar colour*/
-.navbar_col {
-    background-color: #023436;
-}
 
-/* Styling for navbar size*/
-.navbar_size {
-    min-height: 60px;
-}
+/* Styling for navbar*/
+
+    /* Styling for navbar colour*/
+    .navbar_col {
+        background-color: #023436;
+    }
+    
+    /* Styling for navbar size*/
+    .navbar_size {
+        min-height: 60px;
+    }
+    
+    /* Styling for navbar brand colour*/
+    .navbar-brand {
+        color: #FFFFFF;
+    }
 
 
-/* Styling for navbar brand colour*/
-.navbar-brand {
-    color: #FFFFFF;
-}
+/* Styling for index page*/
 
-/* Styling for index background colour*/
-.index-bg_col {
-    background-color: #00BFB3;
-}
+    /* Styling for index header colour*/
+    .index-header_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for index title colour*/
+    .index-title_col {
+        color: #023436;
+    }
+    
+    /* Styling for index page log in and sign up functionality*/
 
-/* Styling for index title colour*/
-.index-title_col {
-    color: #023436;
-}
+    .centered {
+        padding: 100px 0;
+    }
+    
+    /* Styling for index footer colour*/
+    .index-footer_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for index footer size*/
+    .index-footer_size {
+        min-height: 60px;
+    }
+    
+    /* Styling for index footer text colour*/
+    .index-footer-text_col {
+        color: #FDFFFC;
+    }
 
-/* Styling for card body colour*/
-.card-body_col {
-    background-color: #FDFFFC;
-}
 
-/* Styling for card title colour*/
-.card-title_col {
-    color: #023436;
-}
+/* Styling for cards*/
 
-/* Styling for card subtitle colour*/
-.card-subtitle_col {
-    color: #049A8F;
-}
+    /* Styling for card body colour*/
+    .card-body_col {
+        background-color: #FDFFFC;
+    }
+    
+    /* Styling for card title colour*/
+    .card-title_col {
+        color: #023436;
+    }
+    
+    /* Styling for card subtitle colour*/
+    .card-subtitle_col {
+        color: #049A8F;
+    }
+    
+    /* Styling for card link colour*/
+    .card-link_col {
+        color: #049A8F;
+    }
 
-/* Styling for card link colour*/
-.card-link_col {
-    color: #049A8F;
-}
 
-a:hover {
-    color: #73D8D2;
-}
+/* Styling for forms*/
+
+    /* Styling for form title colour*/
+    .form-title_col {
+        color: #023436;
+    }
+
+    /* Styling for form subtitle colour*/
+    label {
+        color: #049A8F;
+    }
+    
+    /* Styling for form link colour*/
+    .form-link_col {
+        color: #049A8F;
+    }
+    
+    /* Styling for form button colour*/
+    .form-btn_col {
+        background-color: #73D8D2;
+        color: #023436;
+    }
 
 .accountform {
     padding-top: 20px;
 }
 
 
-/* Styling for index page log in and sign up functionality*/
 
-.centered {
-    padding: 100px 0;
-}
 
 /* Styling for log out nav link*/
 
@@ -164,19 +217,4 @@ a:hover {
 /* Styling to disable link for profile menu list items*/
 .noclick  {
   pointer-events: none;
-}
-
-/* Styling for footer colour*/
-.footer_col {
-    background-color: #00BFB3;
-}
-
-/* Styling for footer size*/
-.footer_size {
-    min-height: 60px;
-}
-
-/* Styling for footer text colour*/
-.footer-text_col {
-    color: #FDFFFC;
 }

@@ -3,12 +3,12 @@
 
 {% block content %}
     
-    <div class="index-bg_col">
+    <div class="index-header_col">
         
         <div class="container">
-            <div class="row">
+            <div class="row pt-5">
                 <div class="col-12">
-                    <h2 class="text-center pt-5 index-title_col">You are the right people, this in the Right Place, now is the right time</h2>
+                    <h2 class="text-center index-title_col">You are the right people, this in the Right Place, now is the right time</h2>
                 </div>
             </div>    
             
@@ -17,26 +17,26 @@
                     <div class="col-12 col-sm-6 col-lg-4">
                         
                         <div class="card mb-5">
-                        <div class="card-body card-body_col">
-                            <h5 class="card-title card-title_col">Are you a Marketer?</h5>
-                            <h6 class="card-subtitle mb-2 card-subtitle_col">Welcome</h6>
-                            <p class="card-text">Are you a brand looking for a product placement opportunity and looking to connect?</p>
-                            <a href="{% url 'login' %}" class="card-link card-link_col"><i class="fas fa-sign-in-alt"></i> Log In</a>
-                            <a href="{% url 'signup' %}?type=marketer" class="card-link card-link_col"><i class="fa fa-user-plus"></i> Sign up</a>
-                        </div>
+                            <div class="card-body card-body_col">
+                                <h5 class="card-title card-title_col">Are you a Marketer?</h5>
+                                <h6 class="card-subtitle mb-2 card-subtitle_col">Welcome</h6>
+                                <p class="card-text">Are you a brand looking for a product placement opportunity and looking to connect?</p>
+                                <a href="{% url 'login' %}" class="card-link card-link_col"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                                <a href="{% url 'signup' %}?type=marketer" class="card-link card-link_col"><i class="fa fa-user-plus"></i> Sign up</a>
+                            </div>
                         </div>
                     
                     </div>
                     <div class="col-12 col-sm-6 col-lg-4">
                         
                         <div class="card mb-5">
-                        <div class="card-body card-body_col">
-                            <h5 class="card-title card-title_col">Are you a Content Producer?</h5>
-                            <h6 class="card-subtitle mb-2 card-subtitle_col">Welcome</h6>
-                            <p class="card-text">Do you have a product placement opportunity for a brand and looking to connect?</p>
-                            <a href="{% url 'login' %}" class="card-link card-link_col"><i class="fas fa-sign-in-alt"></i> Log In</a>
-                            <a href="{% url 'signup' %}?type=producer" class="card-link card-link_col"><i class="fa fa-user-plus"></i> Sign up</a>
-                        </div>
+                            <div class="card-body card-body_col">
+                                <h5 class="card-title card-title_col">Are you a Content Producer?</h5>
+                                <h6 class="card-subtitle mb-2 card-subtitle_col">Welcome</h6>
+                                <p class="card-text">Do you have a product placement opportunity for a brand and looking to connect?</p>
+                                <a href="{% url 'login' %}" class="card-link card-link_col"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                                <a href="{% url 'signup' %}?type=producer" class="card-link card-link_col"><i class="fa fa-user-plus"></i> Sign up</a>
+                            </div>
                         </div>
                     
                     </div>
@@ -47,9 +47,9 @@
     </div> 
     
     <div class="container">
-        <div class="row">
+        <div class="row py-5">
             <div class="col-12">
-                <h2 class="text-center py-5 index-title_col">How It Works</h2>
+                <h2 class="text-center index-title_col">How It Works</h2>
             </div>
         </div>
     
@@ -85,6 +85,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div class="index-footer index-footer_col">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-12">    
+                    <p class=" mt-4 index-footer-text_col">For educational purposes only. Made using Bootstrap 4.</p>
+                </div>
+            </div>
+        </div>
+    
     </div>
 
     
