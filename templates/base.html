@@ -43,7 +43,7 @@
     
     <header>
             
-        <nav class="navbar navbar-dark bg-dark fixed-top">
+        <nav class="navbar fixed-top navbar_size navbar_col">
             {% if user.is_authenticated %}
                 <a class="navbar-brand" href="{% url 'read_posts' %}">Right Place</a>
             {% else %}
@@ -65,17 +65,21 @@
     </header>
     
     <main>
-        
-        <div class="container">
                 
-            {% block content %} 
-            {% endblock %}
-
-        </div>
+        {% block content %} 
+        {% endblock %}
         
     </main>
     
-    <footer>
+    <footer class="footer_size footer_col">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-12">    
+                    <p class=" mt-4 footer-text_col">For educational purposes only. Made using Bootstrap 4.</p>
+                </div>
+            </div>
+        </div>
         
     </footer>
     

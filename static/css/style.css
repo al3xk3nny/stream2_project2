@@ -1,20 +1,61 @@
 body {
-        padding-top: 75px;
+        padding-top: 60px;
     }
 
-@media only screen and (min-width: 960px) {
-    body {
-        padding-top: 100px;
-    }
-}    
+/*@media only screen and (min-width: 960px) {*/
+/*    body {*/
+/*        padding-top: 60px;*/
+/*    }*/
+/*}*/
 
-/* Background image for index page*/
+/* Styling for navbar colour*/
+.navbar_col {
+    background-color: #023436;
+}
 
-body {
-    background-image: url('/static/images/bg_image-index.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+/* Styling for navbar size*/
+.navbar_size {
+    min-height: 60px;
+}
+
+
+/* Styling for navbar brand colour*/
+.navbar-brand {
+    color: #FFFFFF;
+}
+
+/* Styling for index background colour*/
+.index-bg_col {
+    background-color: #00BFB3;
+}
+
+/* Styling for index title colour*/
+.index-title_col {
+    color: #023436;
+}
+
+/* Styling for card body colour*/
+.card-body_col {
+    background-color: #FDFFFC;
+}
+
+/* Styling for card title colour*/
+.card-title_col {
+    color: #023436;
+}
+
+/* Styling for card subtitle colour*/
+.card-subtitle_col {
+    color: #049A8F;
+}
+
+/* Styling for card link colour*/
+.card-link_col {
+    color: #049A8F;
+}
+
+a:hover {
+    color: #73D8D2;
 }
 
 .accountform {
@@ -36,9 +77,19 @@ body {
 
 /* Styling for card responsiveness*/
 
-.card-size {
-    width: 100%;
-}    
+@media only screen and (min-width: 720px) {
+    .card-size {
+        min-height: 675px;
+        
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .card-size {
+        min-height: 600px;
+        
+    }
+}
 
 
 /* Styling for the topbar nav*/
@@ -111,6 +162,21 @@ body {
 }
 
 /* Styling to disable link for profile menu list items*/
-    .noclick  {
-      pointer-events: none;
-    }
+.noclick  {
+  pointer-events: none;
+}
+
+/* Styling for footer colour*/
+.footer_col {
+    background-color: #00BFB3;
+}
+
+/* Styling for footer size*/
+.footer_size {
+    min-height: 60px;
+}
+
+/* Styling for footer text colour*/
+.footer-text_col {
+    color: #FDFFFC;
+}
