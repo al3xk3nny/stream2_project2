@@ -3,16 +3,16 @@
     <nav class="navbar d-block col-12 d-lg-none mb-4 topbar topbar_col">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="{% url 'my_profile' %}">Your Details<span class="sr-only">(current)</span></a>
+                <a class="nav-link topbar-nav-link_col active" href="{% url 'my_profile' %}">Your Details<span class="sr-only">(current)</span></a>
             </li>
             
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle topbar-heading_col" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opportunities</a>
                 <div class="dropdown-menu">
-                    <a class="nav-link topbar-nav-link_col" href="{% url 'my_posts' %}">Your Opportunities</a>
-                    <a class="nav-link topbar-nav-link_col" href="{% url 'my_inbox' %}">Inbox</a>
+                    <a class="nav-link topbar-drop-nav-link_col" href="{% url 'my_posts' %}">Your Opportunities</a>
+                    <a class="nav-link topbar-drop-nav-link_col" href="{% url 'my_inbox' %}">Inbox</a>
                     <div class="dropdown-divider"></div>
-                    <a class="nav-link topbar-nav-link_col" href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a>
+                    <a class="nav-link topbar-drop-nav-link_col" href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a>
                 </div>
             </li>
         </ul>
@@ -23,7 +23,7 @@
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'my_profile' %}">Your Details<span class="sr-only">(current)</span></a>
+                    <a class="nav-link active sidebar-nav-link_col" href="{% url 'my_profile' %}">Your Details<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
     
@@ -34,13 +34,13 @@
             
             <ul class="nav flex-column px-3 mb-2">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'my_posts' %}">Your Opportunities</a>
+                    <a class="nav-link sidebar-nav-link_col" href="{% url 'my_posts' %}">Your Opportunities</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'my_inbox' %}">Inbox</a>
+                    <a class="nav-link sidebar-nav-link_col" href="{% url 'my_inbox' %}">Inbox</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a>
+                    <a class="nav-link sidebar-nav-link_col" href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a>
                 </li>
             </ul>
             

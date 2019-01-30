@@ -7,7 +7,7 @@ footer {
 }
 
 a {
-    color: #FDFFFC;
+    color: #00BFB3;
     }
 
 a:hover {
@@ -26,6 +26,16 @@ a:hover {
     /* General styling*/
     h1, h2, h3, h4 {
         color: #023436;
+    }
+    
+    /* Styling for text link colour on white background*/
+    .lt-text-link_col {
+        color: #00BFB3;
+    }
+    
+    /* Styling for text link colour on dark background*/
+    .dk-text-link_col {
+        color: #FDFFFC;
     }
 
     /* Styling used on some form pages to highlight text*/
@@ -201,6 +211,10 @@ a:hover {
     
     /* Styling for topbar nav link colour*/
     .topbar-nav-link_col {
+        color: #FDFFFC;
+    }
+    
+    .topbar-drop-nav-link_col {
         color: #00BFB3;
     }
 
@@ -210,6 +224,11 @@ a:hover {
     /* Styling for sidebar colour*/
     .sidebar_col {
         background-color: #00BFB3;
+    }
+    
+    /* Styling for sidebar nav link colour*/
+    .sidebar-nav-link_col {
+        color: #FDFFFC;
     }
 
     /* Styling for sidebar position*/

@@ -23,7 +23,7 @@
         
             <div class="row">
             
-            {% if request.user.posts %}
+            {% if posts %}
             
                 {% for post in posts %}
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4">
@@ -54,7 +54,7 @@
             
             {% else %}
             
-                <p>You have not added any opportunities. Click <a href="{% url 'write_post' %}">Add Opportunity</a> to add one now.</p>
+                <p>You have not added any opportunities. Click <a class="lt-text-link_col" href="{% url 'write_post' %}">Add Opportunity</a> to add one now.</p>
                 
             {% endif %}    
         

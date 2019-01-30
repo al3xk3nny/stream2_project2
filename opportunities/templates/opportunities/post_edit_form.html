@@ -3,15 +3,17 @@
 
 {% block content %}
 
-    <h1>Edit</h1>
-
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        {{ form | as_bootstrap }}
-        
-        <button type="submit" class="btn btn-primary">Edit</button>
-        
-    </form>
+    <div class="container"> 
+        <div class="row pt-5">
+            <div class="col-12">
+                <h2 class="form-title_col">Edit Opportunity</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn form-btn_col">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>    
     
 {% endblock %}
