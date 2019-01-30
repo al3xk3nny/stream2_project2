@@ -3,16 +3,24 @@
 
 {% block content %}
 
-    <h1>Add</h1>
-
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        {{ form | as_bootstrap }}
-        
-        <button type="submit" class="btn btn-primary">Add</button>
-        
-    </form>
+    <div class="container"> 
+        <div class="row pt-5">
+            <div class="col-12">
+                <h2 class="form-title_col">Add Opportunity</h2>
+                <p>Add an opportunity and allow others to connect.</p>
+                <ol>
+                    <li>Under <span class="hl-text_col">Title</span> add a short description of your opportunity.</li>
+                    <li>Under <span class="hl-text_col">Content</span> add a summary of what your opportunity is and why you are interested in connecting with others.</li>
+                    <li>Under <span class="hl-text_col">Image</span> attach an image of your opportunity so that others better understand your proposal.</li>
+                </ol>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn form-btn_col">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>    
     
 {% endblock %}
 

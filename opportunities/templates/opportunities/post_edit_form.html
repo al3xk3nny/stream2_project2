@@ -7,6 +7,12 @@
         <div class="row pt-5">
             <div class="col-12">
                 <h2 class="form-title_col">Edit Opportunity</h2>
+                <p>If you are editing your opportunity please remember.</p>
+                <ol>
+                    <li>Under <span class="hl-text_col">Title</span> keep your description short.</li>
+                    <li>Under <span class="hl-text_col">Content</span> keep your summary succinct.</li>
+                    <li>Under <span class="hl-text_col">Image</span> keep the current attached image or replace it with another. You must tick the <span class="hl-text_col">Clear</span> check box if you want to replace the current image. Remember, adding an image of your opportunity lets others better understand your proposal.</li>
+                </ol>
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | as_bootstrap }}
