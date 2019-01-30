@@ -2,114 +2,109 @@
 
 {% block content %}
     
-    {% if request.user.profile.subscription_id %}
-        {% if subscription.status == "active" %}
-            {% include "profile_menu_active.html" %}
-        {% elif subscription.status == "canceled" %}
-            {% include "profile_menu_cancelled.html" %}
-        {% endif %}
-    {% else %}
-        {% include "profile_menu_cancelled.html" %}    
-    {% endif %}    
-    
-    <div class="profile_body">
+    <div class="container">
+        {% if request.user.profile.subscription_id %}
+            {% if subscription.status == "active" %}
+                {% include "profile_menu_active.html" %}
+            {% elif subscription.status == "canceled" %}
+                {% include "profile_menu_cancelled.html" %}
+            {% endif %}
+        {% else %}
+            {% include "profile_menu_cancelled.html" %}    
+        {% endif %}    
         
-        <div class="row profile_welcome">
-            <div class="col-12">
-                <h3>Hello {{ user.first_name }}</h3>
-            </div>
-        </div>
-        
-        <div class="row mt-4">
+        <div class="profile-body_pos">
             
-            <div class="col-6 col-sm-4 col-lg-2 mb-4">
-                
-                <img class="profile_image" src="{{ MEDIA_URL }}{{ user.profile.image }}" alt="Profile image" width="200px" height="200px" />
-                
+            <div class="row pt-5 profile-welcome_pos">
+                <div class="col-12">
+                    <h3>Hello {{ user.first_name }}</h3>
+                </div>
             </div>
             
-            <div class="col-12 col-sm-8 col-lg-5 mb-4">
+            <div class="row mt-4">
+                <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                    <img class="profile-image_size" src="{{ MEDIA_URL }}{{ user.profile.image }}" alt="Profile image" width="200px" height="200px" />
+                </div>
                 
-                <h4>Your Details</h4>
+                <div class="col-12 col-sm-8 col-lg-5 mb-4">
+                    <h4>Your Details</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Username:</th>
+                            <td>{{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th>Role:</th>
+                            <td>{{ group }}</td>
+                        </tr>
+                        <tr>
+                            <th>First name:</th>
+                            <td>{{ user.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Last name:</th>
+                            <td>{{ user.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone number:</th>
+                            <td>{{ user.profile.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                    </table>
+                </div>
                 
-                <table class="table profile-user-details">
-                    <tr>
-                        <th>Username:</th>
-                        <td>{{ user.username }}</td>
-                    </tr>
-                                        <tr>
-                        <th>Role:</th>
-                        <td>{{ group }}</td>
-                    </tr>
-                                        <tr>
-                        <th>First name:</th>
-                        <td>{{ user.first_name }}</td>
-                    </tr>
-                                        <tr>
-                        <th>Last name:</th>
-                        <td>{{ user.last_name }}</td>
-                    </tr>
-                                        <tr>
-                        <th>Phone number:</th>
-                        <td>{{ user.profile.phone_number }}</td>
-                    </tr>
-                                        <tr>
-                        <th>Email:</th>
-                        <td>{{ user.email }}</td>
-                    </tr>
-                </table>
-            
-            </div>
-            
-            <div class="col-12 col-sm-8 offset-sm-4 col-lg-5 offset-lg-0 mb-4">
+                <div class="col-12 col-sm-8 offset-sm-4 col-lg-5 offset-lg-0 mb-4">
+                    <h4>Subscription</h4>
                     
-                <h4>Subscription</h4>
-                {% if request.user.profile.subscription_id %} 
-                    
-                    {% if subscription.status == "active" %}
-                        <table class="table profile-user-details ">
-                            <tr>
-                                <th>Subscription:</th>
-                                <td>{{ subscription.plan.nickname }}</td>
-                            </tr>
-                            <tr>
-                                <th>Status:</th>
-                                <td>{% if cancelled_on == "not_applicable" %} Active {% else %}<span style="color:#ff0000;">Cancelled on</span> {{ cancelled_on }} {% endif %}</td>
-                            </tr>
-                            <tr>
-                                <th>Valid from:</th>
-                                <td>{{ start_date }}</td>
-                            </tr>
-                            <tr>
-                                <th>Valid till:</th>
-                                <td>{{ end_date }}</td>
-                            </tr>
-                            <tr>
-                                <th>Auto-renew on expiry:</th>
-                                <td>{% if subscription.cancel_at_period_end == False %}Yes {% else %}No{% endif %}</td>
-                            </tr>
-                        </table>
+                    {% if request.user.profile.subscription_id %} 
                         
-                        {% if cancelled_on == "not_applicable" %}
-                            <a href="{% url 'unsubscribe' %}" class="btn btn-success">Cancel subscription</a> 
-                        {% endif %} 
-                        
-                    {% elif subscription.status == "canceled" %}
-                        <p>Your {{subscription.plan.nickname}} subscription has expired.</p>
-                        <a href="{% url 're_subscribe' %}" class="btn btn-success">Re-subscribe</a> 
+                        {% if subscription.status == "active" %}
+                            <table class="table">
+                                <tr>
+                                    <th>Subscription:</th>
+                                    <td>{{ subscription.plan.nickname }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Status:</th>
+                                    <td>{% if cancelled_on == "not_applicable" %} Active {% else %}<span style="color:#ff0000;">Cancelled on</span> {{ cancelled_on }} {% endif %}</td>
+                                </tr>
+                                <tr>
+                                    <th>Valid from:</th>
+                                    <td>{{ start_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Valid till:</th>
+                                    <td>{{ end_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Auto-renew on expiry:</th>
+                                    <td>{% if subscription.cancel_at_period_end == False %}Yes {% else %}No{% endif %}</td>
+                                </tr>
+                            </table>
+                            
+                            {% if cancelled_on == "not_applicable" %}
+                                <a href="{% url 'unsubscribe' %}" class="btn table-btn_col">Cancel subscription</a> 
+                            {% endif %} 
+                            
+                        {% elif subscription.status == "canceled" %}
+                            <p>Your {{subscription.plan.nickname}} subscription has expired.</p>
+                            <a href="{% url 're_subscribe' %}" class="btn table-btn_col">Re-subscribe</a> 
+                        {% endif %}
+                            
+                    {% else %}
+                        <p>You are not subscribed.</p>
+                        <a href="{% url 'add_credit_card' %}" class="btn table-btn_col">Subscribe</a> 
                     {% endif %}
-                        
-                {% else %}
-                    <p>You are not subscribed.</p>
-                    <a href="{% url 'add_credit_card' %}" class="btn btn-success">Subscribe</a> 
-                {% endif %}
+                    
+                </div>
                 
             </div>
             
         </div>
-        
         
     </div>
-    
     
 {% endblock %}

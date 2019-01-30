@@ -31,15 +31,21 @@ def read_posts(request):
 
 
 def my_posts(request):
+    subscription = False
+    if request.user.profile.subscription_id:
+        subscription = stripe.Subscription.retrieve(request.user.profile.subscription_id)
     posts = Post.objects.filter(author=request.user)
     
-    return render(request, "opportunities/my_post_list.html", {"posts": posts})
+    return render(request, "opportunities/my_post_list.html", {"subscription":subscription, "posts": posts})
 
 
 def my_inbox(request):
+    subscription = False
+    if request.user.profile.subscription_id:
+        subscription = stripe.Subscription.retrieve(request.user.profile.subscription_id)
     messages = Message.objects.filter(recipient=request.user)
     
-    return render(request, "opportunities/inbox.html", {"messages": messages})
+    return render(request, "opportunities/inbox.html", {"subscription":subscription, "messages": messages})
 
 
 @login_required

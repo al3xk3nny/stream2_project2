@@ -2,59 +2,60 @@
 
 {% block content %}
     
-    {% if request.user.profile.subscription_id %}
-        {% if subscription.status == "active" %}
-            {% include "profile_menu_active.html" %}
-        {% elif subscription.status == "canceled" %}
-            {% include "profile_menu_cancelled.html" %}
-        {% endif %}
-    {% else %}
-        {% include "profile_menu_cancelled.html" %}    
-    {% endif %} 
-    
-    <div class="profile_body">
-    
-        <div class="row">
-        
-        {% if request.user.post_id %}
-        
-            {% for post in posts %}
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                    
-                    <div class="card mb-5 card-size">
-                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.image }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.content }}</p>
-                            <p class="card-text">{{ post.created_date }}</p>
-                            
-                            <div class="row">
-                                <div class="col-2">
-                                    <a class="btn btn-link" href="{% url 'edit_post' post.id %}" role="buton">Edit</a>
-                                </div>
-                                <div class="col-2">
-                                    <form method="POST" action="{% url 'delete_post' %}">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="post" value="{{ post.id }}" />
-                                        <button type="submit" class="btn btn-link">Delete</button>
-                                    </form>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                
-                </div>
-            {% endfor %}
-        
+    <div class="container">
+        {% if request.user.profile.subscription_id %}
+            {% if subscription.status == "active" %}
+                {% include "profile_menu_active.html" %}
+            {% elif subscription.status == "canceled" %}
+                {% include "profile_menu_cancelled.html" %}
+            {% endif %}
         {% else %}
+            {% include "profile_menu_cancelled.html" %}    
+        {% endif %}
         
-            <p>You have not added any opportunities. Click <a href="{% url 'write_post' %}"><i class="fas fa-plus-circle"></i> Add Opportunity</a> to add one now.</p>
+        <div class="profile-body_pos">
+        
+            <div class="row pt-5">
             
-        {% endif %}    
-    
-        </div> 
+            {% if request.user.posts %}
+            
+                {% for post in posts %}
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                        
+                        <div class="card mb-5 post-card_size">
+                            <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.image }}" alt="Card image cap">
+                            <div class="card-body card-body_col">
+                                <h5 class="card-title card-title_col">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.content }}</p>
+                                <p class="card-text">{{ post.created_date }}</p>
+                                
+                                <div class="row">
+                                    <div class="col-2">
+                                        <a class="btn btn-link card-link_col" href="{% url 'edit_post' post.id %}" role="button">Edit</a>
+                                    </div>
+                                    <div class="col-2">
+                                        <form method="POST" action="{% url 'delete_post' %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="post" value="{{ post.id }}" />
+                                            <button type="submit" class="btn btn-link card-link_col">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                {% endfor %}
+            
+            {% else %}
+            
+                <p>You have not added any opportunities. Click <a href="{% url 'write_post' %}">Add Opportunity</a> to add one now.</p>
+                
+            {% endif %}    
         
-    </div>    
-
+            </div> 
+            
+        </div>    
+    </div>
 {% endblock %}

@@ -6,9 +6,20 @@ footer {
     padding-top: 60px;
 }
 
+a {
+    color: #049A8F;
+    }
+
 a:hover {
     color: #73D8D2;
     }
+    
+    
+/* Styling for text colour*/
+
+h1, h2, h3, h4 {
+    color: #023436;
+}
 
 /*@media only screen and (min-width: 960px) {*/
 /*    body {*/
@@ -33,6 +44,12 @@ a:hover {
     .navbar-brand {
         color: #FFFFFF;
     }
+    
+    /* Styling for log out nav link*/
+
+    .nav-link_col {
+        color: white;
+    }
 
 
 /* Styling for index page*/
@@ -43,9 +60,9 @@ a:hover {
     }
     
     /* Styling for index title colour*/
-    .index-title_col {
-        color: #023436;
-    }
+    /*.index-title_col {*/
+    /*    color: #023436;*/
+    /*}*/
     
     /* Styling for index page log in and sign up functionality*/
 
@@ -90,6 +107,36 @@ a:hover {
     .card-link_col {
         color: #049A8F;
     }
+    
+    /* Styling for card responsiveness*/
+
+    @media only screen and (min-width: 720px) {
+        .index-card_size {
+            min-height: 675px;
+            
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        .index-card-size {
+            min-height: 600px;
+            
+        }
+    }
+    
+    @media only screen and (min-width: 720px) {
+        .post-card_size {
+            min-height: 475px;
+            
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        .post-card_size {
+            min-height: 450px;
+            
+        }
+    }
 
 
 /* Styling for forms*/
@@ -115,34 +162,13 @@ a:hover {
         color: #023436;
     }
 
+
+
 .accountform {
     padding-top: 20px;
 }
 
 
-
-
-/* Styling for log out nav link*/
-
-.nav-link_log-out-col {
-    color: white;
-}
-
-/* Styling for card responsiveness*/
-
-@media only screen and (min-width: 720px) {
-    .card-size {
-        min-height: 675px;
-        
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    .card-size {
-        min-height: 600px;
-        
-    }
-}
 
 
 /* Styling for the topbar nav*/
@@ -192,29 +218,38 @@ a:hover {
 /*}*/
 
 
-/* Styling for profile page body*/
+/* Styling for profile body*/
 
-@media only screen and (min-width: 960px) {
-  .profile_body {
-    padding-left: 15%;
-    /*padding-right: 15%;*/
+    /* Styling for profile body position*/
+    @media only screen and (min-width: 960px) {
+      .profile-body_pos {
+        padding-left: 15%;
+        /*padding-right: 15%;*/
+        }
     }
-}
+    
+    
+/* Styling for you details*/
 
-/* Styling for profile welcome*/
-.profile_welcome {
-    background-color: gray;
-    margin: 0px;
-    padding: 10px 0px;
-    width: 100%;
-}
-
-.profile_image {
-    width: 100%;
-    height: auto;
-}
-
-/* Styling to disable link for profile menu list items*/
-.noclick  {
-  pointer-events: none;
-}
+    /* Styling for profile  image size*/
+    .profile-image_size {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Styling for table heading colour*/
+    th {
+        color: #049A8F;
+    }
+    
+    /* Styling for table button colour*/
+    .table-btn_col {
+        background-color: #049A8F;
+        color: #023436;
+    }
+    
+    
+    /* Styling to disable link for profile menu list items*/
+    .noclick  {
+      pointer-events: none;
+    }
