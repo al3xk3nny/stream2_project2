@@ -12,7 +12,13 @@ a {
 
 a:hover {
     color: #73D8D2;
+    text-decoration: none;
     }
+
+.btn-link:hover {
+    color: #73D8D2;
+    text-decoration: none;
+    }    
     
     
 /* Styling for text colour*/
@@ -65,7 +71,6 @@ h1, h2, h3, h4 {
     /*}*/
     
     /* Styling for index page log in and sign up functionality*/
-
     .centered {
         padding: 100px 0;
     }
@@ -100,12 +105,12 @@ h1, h2, h3, h4 {
     
     /* Styling for card subtitle colour*/
     .card-subtitle_col {
-        color: #049A8F;
+        color: #00BFB3;
     }
     
     /* Styling for card link colour*/
     .card-link_col {
-        color: #049A8F;
+        color: #00BFB3;
     }
     
     /* Styling for card responsiveness*/
@@ -144,18 +149,18 @@ h1, h2, h3, h4 {
 
     /* Styling for form subtitle colour*/
     label {
-        color: #049A8F;
+        color: #00BFB3;
     }
     
     /* Styling for form link colour*/
     .form-link_col {
-        color: #049A8F;
+        color: #00BFB3;
     }
     
     /* Styling for form button colour*/
     .form-btn_col {
-        background-color: #73D8D2;
-        color: #023436;
+        background-color: #00BFB3;
+        color: #FDFFFC;
     }
 
 
@@ -177,6 +182,16 @@ h1, h2, h3, h4 {
     /* Styling for the topbar dropdown menu*/
     .dropdown-menu {
         min-width: 15rem;
+    }
+    
+    /* Styling for topbar heading colour*/
+    .topbar-heading_col {
+        color: #023436;
+    }
+    
+    /* Styling for topbar nav link colour*/
+    .topbar-nav-link_col {
+        color: #00BFB3;
     }
 
 
@@ -218,6 +233,17 @@ h1, h2, h3, h4 {
     /*  font-size: .75rem;*/
     /*  text-transform: uppercase;*/
     /*}*/
+    
+    /* Styling for sidebar heading colour*/
+    .sidebar-heading_col {
+        color: #023436;
+    }
+
+    
+/* Styling to disable link for profile menu list items*/
+.noclick  {
+  pointer-events: none;
+}
 
 
 /* Styling for profile body*/
@@ -259,9 +285,9 @@ h1, h2, h3, h4 {
     }
     
     /* Styling for inbox card link colour*/
-    /*.menu-link_col {*/
-    /*    color: #FDFFFC;*/
-    /*}*/
+    .inbox-link_col {
+        color: #FDFFFC;
+    }
     
     /* Styling for inbox card subtitle colour*/
     .card-text_col {
@@ -286,9 +312,3 @@ h1, h2, h3, h4 {
             min-width: 941.5px;
         }
     }
-    
-    
-/* Styling to disable link for profile menu list items*/
-.noclick  {
-  pointer-events: none;
-}

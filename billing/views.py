@@ -20,8 +20,11 @@ def add_credit_card(request):
             request.user.profile.save()
             return redirect("subscribe")
     else:
-        form = CreditCardForm()
-        return render(request, "billing/add_credit_card.html", {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY})
+        if request.user.profile.stripe_id:
+            return redirect("subscribe")
+        else:    
+            form = CreditCardForm()
+            return render(request, "billing/add_credit_card.html", {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY})
         
 
 def re_subscribe(request):

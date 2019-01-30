@@ -1,20 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Subscribe</h1>
     
-        <h2>Annual Subscription</h2>
-        <form method="POST" action='{% url 'subscribe' %}'>
-            {% csrf_token %}
-            <input type="hidden" value="plan_E6GCi5gOfpE8MZ" name="plan"/>
-            <input class="btn btn-default" type="submit" value="Purchase €100 per year"/>
-        </form>
-        
-        <h2>Monthly Subscription</h2>
-        <form method="POST" action='{% url 'subscribe' %}'>
-            {% csrf_token %}
-            <input type="hidden" value="plan_E6GBb256wFmazr" name="plan"/>
-            <input class="btn btn-default" type="submit" value="Purchase €10 per month"/>
-        </form>
+    <div class="container"> 
+        <div class="row pt-5">
+            <div class="col-12">
+                <h2 class="form-title_col">Subscribe</h2>
+            </div>    
+            <div class="col-12 my-4">    
+                <div class="media">
+                    <img class="d-flex mr-3 rounded" src="/static/images/gold.png" alt="Media image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Annual Subscription</h5>
+                        <p>Subscribe to our annual subscription for as little as €100 per annum.</p>
+                        <form method="POST" action='{% url 'subscribe' %}'>
+                            {% csrf_token %}
+                            <input type="hidden" value="plan_E6GCi5gOfpE8MZ" name="plan"/>
+                            <button class="btn form-btn_col" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>    
+            <div class="col-12 my-4">    
+                <div class="media">
+                    <img class="d-flex mr-3 rounded" src="/static/images/silver.png" alt="Media image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Monthly Subscription</h5>
+                        <p>Subscribe to our monthly subscription for as little as €10 per month.</p>
+                        <form method="POST" action='{% url 'subscribe' %}'>
+                            {% csrf_token %}
+                            <input type="hidden" value="plan_E6GBb256wFmazr" name="plan"/>
+                            <button class="btn form-btn_col" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
         
 {% endblock %}
