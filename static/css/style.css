@@ -7,7 +7,7 @@ footer {
 }
 
 a {
-    color: #049A8F;
+    color: #FDFFFC;
     }
 
 a:hover {
@@ -42,13 +42,13 @@ h1, h2, h3, h4 {
     
     /* Styling for navbar brand colour*/
     .navbar-brand {
-        color: #FFFFFF;
+        color: #FDFFFC;
     }
     
     /* Styling for log out nav link*/
 
     .nav-link_col {
-        color: white;
+        color: #FDFFFC;
     }
 
 
@@ -112,29 +112,25 @@ h1, h2, h3, h4 {
 
     @media only screen and (min-width: 720px) {
         .index-card_size {
-            min-height: 675px;
-            
+            min-height: 675px; 
         }
     }
     
     @media only screen and (min-width: 960px) {
-        .index-card-size {
-            min-height: 600px;
-            
+        .index-card_size {
+            min-height: 600px; 
         }
     }
     
     @media only screen and (min-width: 720px) {
         .post-card_size {
-            min-height: 475px;
-            
+            min-height: 475px;  
         }
     }
     
     @media only screen and (min-width: 960px) {
         .post-card_size {
             min-height: 450px;
-            
         }
     }
 
@@ -172,50 +168,56 @@ h1, h2, h3, h4 {
 
 
 /* Styling for the topbar nav*/
-
-/*.topbar {*/
     
-/*}*/
-
-/* Styling for the topbar dropdown menu*/
-
-.dropdown-menu {
-    min-width: 15rem;
-}
+    /* Styling for topbar colour*/
+    .topbar_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for the topbar dropdown menu*/
+    .dropdown-menu {
+        min-width: 15rem;
+    }
 
 
 /* Styling for the desktop sidebar nav*/
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  padding: 100px 0 0;
-  /*box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);*/
-}
+    /* Styling for sidebar colour*/
+    .sidebar_col {
+        background-color: #00BFB3;
+    }
 
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 100px);
-  padding-top: 0.5rem;
-}
-
-/*.sidebar .nav-link {*/
-/*  font-weight: 500;*/
-/*  color: #333;*/
-/*}*/
-
-/*.sidebar .nav-link.active {*/
-/*  color: #007bff;*/
-/*}*/
-
-/*.sidebar-heading {*/
-/*  font-size: .75rem;*/
-/*  text-transform: uppercase;*/
-/*}*/
+    /* Styling for sidebar position*/
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 100px 0 0;
+      /*box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);*/
+    }
+    
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 100px);
+      padding-top: 0.5rem;
+    }
+    
+    /*.sidebar .nav-link {*/
+    /*  font-weight: 500;*/
+    /*  color: #333;*/
+    /*}*/
+    
+    /*.sidebar .nav-link.active {*/
+    /*  color: #007bff;*/
+    /*}*/
+    
+    /*.sidebar-heading {*/
+    /*  font-size: .75rem;*/
+    /*  text-transform: uppercase;*/
+    /*}*/
 
 
 /* Styling for profile body*/
@@ -229,7 +231,7 @@ h1, h2, h3, h4 {
     }
     
     
-/* Styling for you details*/
+/* Styling for your details*/
 
     /* Styling for profile  image size*/
     .profile-image_size {
@@ -239,17 +241,54 @@ h1, h2, h3, h4 {
     
     /* Styling for table heading colour*/
     th {
-        color: #049A8F;
+        color: #00BFB3;
     }
     
     /* Styling for table button colour*/
     .table-btn_col {
-        background-color: #049A8F;
-        color: #023436;
+        background-color: #00BFB3;
+        color: #FDFFFC;
     }
     
     
-    /* Styling to disable link for profile menu list items*/
-    .noclick  {
-      pointer-events: none;
+/* Styling for inbox*/
+
+    /* Styling for inbox card header colour*/
+    .card-header_col {
+        background-color: #00BFB3;
     }
+    
+    /* Styling for inbox card link colour*/
+    /*.menu-link_col {*/
+    /*    color: #FDFFFC;*/
+    /*}*/
+    
+    /* Styling for inbox card subtitle colour*/
+    .card-text_col {
+        color: #049A8F;
+    }
+    
+    /* Styling for inbox card responsiveness*/
+    @media only screen and (min-width: 540px) {
+        .card-header_size {
+            min-width: 343.2px;
+        }
+    }
+    
+    @media only screen and (min-width: 720px) {
+        .card-header_size {
+            min-width: 688px;
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        .card-header_size {
+            min-width: 941.5px;
+        }
+    }
+    
+    
+/* Styling to disable link for profile menu list items*/
+.noclick  {
+  pointer-events: none;
+}

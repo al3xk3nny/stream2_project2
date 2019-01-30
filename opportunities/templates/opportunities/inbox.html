@@ -16,83 +16,88 @@
         <div class="profile-body_pos">
             
             <div class="row pt-5">
+                <div class="col-12 mb-4">
+                    <h2>Inbox</h2>
+                </div>
+            </div>
+
+            <div class="row">
             
                 {% if request.user.messages_received %}
                 
                     <div id="accordion">
                         
                         {% for message in messages %}
-        
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <h5 class="mb-0">
-                                                <p>Message from {{ message.author.first_name }} re. {{ message.post.title }} - post number:{{ message.post.id }}, post author: {{ message.recipient.first_name }}</p>
+                            <div class="col-12">
+                                
+                                <div class="card">
+                                    <div class="card-header card-header_size card-header_col" id="headingOne">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>Message from {{ message.author.first_name }} {{ message.author.last_name }} re. {{ message.post.title }}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">    
+                                            <div class="col-5 col-md-3 col-lg-2">
                                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_{{ message.id }}" aria-expanded="true" aria-controls="collapseOne">View message
                                                 </button>
-                                            </h5>
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="float-right mb-0">
+                                            </div>
+                                            <div class="col-3 col-md-5 col-lg-6">
                                                 <form method="POST" action="{% url 'delete_message' %}"> 
                                                     {% csrf_token %}
                                                     <input type="hidden" name="message" value="{{ message.id }}" />
-                                                    <input type="submit" class="btn btn-primary" value="Delete" />
+                                                    <button type="submit" class="btn btn-link">Delete</button>
                                                 </form>
-                                            </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div id="collapse_{{ message.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body card-body_col">
+                                            
+                                            <div class="row">
+                                            
+                                                <div class="col-12 col-md-4">
+                                                    <div class="card mb-5 post-card_size">
+                                                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ message.post.image }}" alt="Card image cap">
+                                                        <div class="card-body card-body_col">
+                                                            <h5 class="card-title card-title_col">{{ message.post.title }}</h5>
+                                                            <p class="card-text">{{ message.post.content }}</p>
+                                                            <p class="card-text">{{ message.post.created_date }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-12 col-md-4">
+                                                    <div class="card mb-5 post-card_size">
+                                                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ message.image }}" alt="Card image cap">
+                                                        <div class="card-body card-body_col">
+                                                            <h5 class="card-title card-title_col">{{ message.title }}</h5>
+                                                            <p class="card-text">{{ message.content }}</p>
+                                                            <p class="card-text">{{ message.created_date }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-12 col-md-4">
+                                                    <div class="card mb-5 post-card_size">
+                                                         <img class="card-img-top" src="/static/images/contact.png" alt="Card image cap">
+                                                        <div class="card-body card-body_col">
+                                                            <h5 class="card-title card-title_col">I'd Like to get in touch</h5>
+                                                            <p class="card-text"><span class="card-text_col">Name:</span> {{ message.author.first_name }} {{ message.author.last_name }}</p>
+                                                            <p class="card-text"><span class="card-text_col">Email:</span> {{ message.author.email }}</p>
+                                                            <p class="card-text"><span class="card-text_col">Phone Number:</span> {{ message.author.profile.phone_number }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div> 
+                                            
                                         </div>
                                     </div>
                                 </div>
-                        
-                                <div id="collapse_{{ message.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body">
-                                        
-                                        <div class="row">
-                                        
-                                            <div class="col-12 col-md-4">
-                                                <div class="card mb-5 card-size">
-                                                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ message.post.image }}" alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ message.post.title }}</h5>
-                                                        <p class="card-text">{{ message.post.content }}</p>
-                                                        <p class="card-text">{{ message.post.created_date }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="col-12 col-md-4">
-                                                <div class="card mb-5 card-size">
-                                                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ message.image }}" alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ message.title }}</h5>
-                                                        <p class="card-text">{{ message.content }}</p>
-                                                        <p class="card-text">{{ message.created_date }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="col-12 col-md-4">
-                                                <div class="card mb-5 card-size">
-                                                     <!--<img class="card-img-top" src="{{ MEDIA_URL }}{{ message.author.profile.image }}" alt="Card image cap" width="auto" height="180px">-->
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">I'd Like to get in touch</h5>
-                                                        <p class="card-text"><strong>Name:</strong> {{ message.author.first_name }} {{ message.author.last_name }}</p>
-                                                        <!--<p class="card-text">{{ message.author.first_name }} {{ message.author.last_name }}</p>-->
-                                                        <p class="card-text"><strong>Email:</strong> {{ message.author.email }}</p>
-                                                        <!--<p class="card-text">{{ message.author.email }}</p>-->
-                                                        <p class="card-text"><strong>Phone Number:</strong> {{ message.author.profile.phone_number }}</p>
-                                                        <!--<p class="card-text">{{ message.author.profile.phone_number }}</p>-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                        </div> 
-                                        
-                                    </div>
-                                </div>
                             </div>
-                    
                         {% endfor %} 
                     
                     </div>

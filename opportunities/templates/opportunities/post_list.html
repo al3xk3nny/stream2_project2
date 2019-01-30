@@ -3,20 +3,26 @@
 
 {% block content %}
     
+    <div class="index-header_col">
+    
+        <div class="container">
+            
+            <div class="row py-5">
+                <div class="col-12">
+                    <p>You are logged in as a <strong>{{ group }}</strong>. Below are product placement opportunities looking to connect. Register your interest. The opportunity owner will be provided with your contact details and will be in touch if there is a match.</p>
+                    <p>Alternaively, visit <a href="{% url 'my_profile' %}">your profile</a> where you can add an opportunity of your own.</p>  
+                </div>
+            </div>
+        
+        </div>
+    
+    </div>
+    
     <div class="container">
         
-        <div class="row pt-5">
+        <div class="row py-5">
             <div class="col-12">
-                <p>You are logged in as a <strong>{{ group }}</strong>. Below are product placement opportunities looking to connect. Register your interest. The opportunity owner will be provided with your contact details and will be in touch if there is a match.</p>
-                <p>Alternaively, visit <a href="{% url 'my_profile' %}">your profile</a> where you can add an opportunity of your own.</p>  
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div class="row">
-            <div class="col-12 mb-4">
-                <h2>Opportunities</h2>
+                <h2 class="text-center">Opportunities</h2>
             </div>
         </div>        
         
