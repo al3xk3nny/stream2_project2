@@ -3,13 +3,23 @@
 
 {% block content %}
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        {{ form | as_bootstrap }}
-        
-        <button type="submit" class="btn btn-primary">Send Request</button>
-        
-    </form>
+    <div class="container"> 
+        <div class="row pt-5">
+            <div class="col-12">
+                <h2 class="form-title_col">Message</h2>
+                <p>Send a message to the opportunity owner to let them know your interested in connecting.</p>
+                <ol>
+                    <li>Under <span class="hl-text_col">Title</span> add a short description of your opportunity.</li>
+                    <li>Under <span class="hl-text_col">Content</span> add a summary of what your opportunity is and why you are interested in connecting.</li>
+                    <li>Under <span class="hl-text_col">Image</span> attach an image of your opportunity so that the opportunity owner better understands your proposal.</li>
+                </ol>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn form-btn_col">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>    
     
 {% endblock %}

@@ -23,9 +23,15 @@ a:hover {
     
 /* Styling for text colour*/
 
-h1, h2, h3, h4 {
-    color: #023436;
-}
+    /* General styling*/
+    h1, h2, h3, h4 {
+        color: #023436;
+    }
+
+    /* Styling used on some form pages to highlight text*/
+    .hl-text_col {
+        color: #00BFB3;
+    }
 
 /*@media only screen and (min-width: 960px) {*/
 /*    body {*/
@@ -163,6 +169,10 @@ h1, h2, h3, h4 {
         color: #FDFFFC;
     }
 
+    /* Styling for Choose File button*/
+    #id_image {
+        border: none;
+    }
 
 
 .accountform {
@@ -291,7 +301,7 @@ h1, h2, h3, h4 {
     
     /* Styling for inbox card subtitle colour*/
     .card-text_col {
-        color: #049A8F;
+        color: #00BFB3;
     }
     
     /* Styling for inbox card responsiveness*/
