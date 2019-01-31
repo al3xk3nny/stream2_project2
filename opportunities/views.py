@@ -15,7 +15,7 @@ def is_in_group(user, group_name):
 
 
 # Create your views here.
-
+@login_required
 def read_posts(request):
     group = request.user.groups.all()[0]
     subscription = False
@@ -29,7 +29,7 @@ def read_posts(request):
     
     return render(request, "opportunities/post_list.html", {"group": group, "subscription":subscription, "posts": posts})
 
-
+@login_required
 def my_posts(request):
     subscription = False
     if request.user.profile.subscription_id:
@@ -38,7 +38,7 @@ def my_posts(request):
     
     return render(request, "opportunities/my_post_list.html", {"subscription":subscription, "posts": posts})
 
-
+@login_required
 def my_inbox(request):
     subscription = False
     if request.user.profile.subscription_id:
@@ -85,7 +85,6 @@ def edit_post(request, id):
 def delete_post(request):
     get_object_or_404(Post, pk=request.POST["post"]).delete()
     return redirect(my_posts)
-
 
 
 @login_required

@@ -18,7 +18,6 @@ def show_index(request):
         return render(request, "index.html")
 
 
-
 def signup(request):
     if request.method == "POST":
         user_form = SignUpForm(request.POST)
@@ -44,7 +43,6 @@ def signup(request):
         return render(request, "registration/signup.html", {"user_form": user_form, "profile_form": profile_form})
 
 
-
 def my_profile(request):
     group = request.user.groups.all()[0]
     if request.user.profile.subscription_id:
@@ -58,8 +56,6 @@ def my_profile(request):
             cancelled_on = date.fromtimestamp(float(cancelled_at_str))
         else:
             cancelled_on = "not_applicable"
-        
         return render(request, "profile.html", {"subscription":subscription, "end_date":end_date, "start_date":start_date, "cancelled_on":cancelled_on, "group": group})
-    else:    
-        
+    else:
         return render(request, "profile.html", {"group": group})

@@ -52,12 +52,6 @@ a:hover {
         color: #00BFB3;
     }
 
-/*@media only screen and (min-width: 960px) {*/
-/*    body {*/
-/*        padding-top: 60px;*/
-/*    }*/
-/*}*/
-
 
 /* Styling for navbar*/
 
@@ -193,15 +187,14 @@ a:hover {
         border: none;
     }
 
+
 /* Styling for password reset forms*/
 .accountform {
     padding-top: 20px;
 }
 
 
-
-
-/* Styling for the topbar nav*/
+/* Styling for the mobile topbar nav*/
     
     /* Styling for topbar colour*/
     .topbar_col {
@@ -258,26 +251,12 @@ a:hover {
       padding-top: 0.5rem;
     }
     
-    /*.sidebar .nav-link {*/
-    /*  font-weight: 500;*/
-    /*  color: #333;*/
-    /*}*/
-    
-    /*.sidebar .nav-link.active {*/
-    /*  color: #007bff;*/
-    /*}*/
-    
-    /*.sidebar-heading {*/
-    /*  font-size: .75rem;*/
-    /*  text-transform: uppercase;*/
-    /*}*/
-    
     /* Styling for sidebar heading colour*/
     .sidebar-heading_col {
         color: #023436;
     }
 
-    
+
 /* Styling to disable link for profile menu list items*/
 .noclick  {
   pointer-events: none;
