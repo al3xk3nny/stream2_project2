@@ -22,8 +22,17 @@ a:hover {
     
     
 /* Styling for text colour*/
-
-    /* General styling*/
+    
+    #brand {
+        font-family: 'Permanent Marker', cursive; 
+    }
+    
+    /* General styling font family*/
+    h1, h2, h3, h4, h5, h6, p {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    /* General styling font colour*/
     h1, h2, h3, h4 {
         color: #023436;
     }
