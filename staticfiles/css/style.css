@@ -1,0 +1,331 @@
+body {
+    padding-top: 60px;
+}
+
+footer {
+    padding-top: 60px;
+}
+
+a {
+    color: #00BFB3;
+    }
+
+a:hover {
+    color: #73D8D2;
+    text-decoration: none;
+    }
+
+.btn-link:hover {
+    color: #73D8D2;
+    text-decoration: none;
+    }    
+    
+    
+/* Styling for text colour*/
+    
+    #brand {
+        font-family: 'Permanent Marker', cursive; 
+    }
+    
+    /* General styling font family*/
+    h1, h2, h3, h4, h5, h6, p {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    /* General styling font colour*/
+    h1, h2, h3, h4 {
+        color: #023436;
+    }
+    
+    /* Styling for text link colour on white background*/
+    .lt-text-link_col {
+        color: #00BFB3;
+    }
+    
+    /* Styling for text link colour on dark background*/
+    .dk-text-link_col {
+        color: #FDFFFC;
+    }
+
+    /* Styling used on some form pages to highlight text*/
+    .hl-text_col {
+        color: #00BFB3;
+    }
+
+
+/* Styling for navbar*/
+
+    /* Styling for navbar colour*/
+    .navbar_col {
+        background-color: #023436;
+    }
+    
+    /* Styling for navbar size*/
+    .navbar_size {
+        min-height: 60px;
+    }
+    
+    /* Styling for navbar brand colour*/
+    .navbar-brand {
+        color: #FDFFFC;
+    }
+    
+    /* Styling for log out nav link*/
+
+    .nav-link_col {
+        color: #FDFFFC;
+    }
+
+
+/* Styling for index page*/
+
+    /* Styling for index header colour*/
+    .index-header_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for index title colour*/
+    /*.index-title_col {*/
+    /*    color: #023436;*/
+    /*}*/
+    
+    /* Styling for index page log in and sign up functionality*/
+    .centered {
+        padding: 100px 0;
+    }
+    
+    /* Styling for index footer colour*/
+    .index-footer_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for index footer size*/
+    .index-footer_size {
+        min-height: 60px;
+    }
+    
+    /* Styling for index footer text colour*/
+    .index-footer-text_col {
+        color: #FDFFFC;
+    }
+
+
+/* Styling for cards*/
+
+    /* Styling for card body colour*/
+    .card-body_col {
+        background-color: #FDFFFC;
+    }
+    
+    /* Styling for card title colour*/
+    .card-title_col {
+        color: #023436;
+    }
+    
+    /* Styling for card subtitle colour*/
+    .card-subtitle_col {
+        color: #00BFB3;
+    }
+    
+    /* Styling for card link colour*/
+    .card-link_col {
+        color: #00BFB3;
+    }
+    
+    /* Styling for card responsiveness*/
+
+    @media only screen and (min-width: 720px) {
+        .index-card_size {
+            min-height: 675px; 
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        .index-card_size {
+            min-height: 600px; 
+        }
+    }
+    
+    @media only screen and (min-width: 720px) {
+        .post-card_size {
+            min-height: 475px;  
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        .post-card_size {
+            min-height: 450px;
+        }
+    }
+
+
+/* Styling for forms*/
+
+    /* Styling for form title colour*/
+    .form-title_col {
+        color: #023436;
+    }
+
+    /* Styling for form subtitle colour*/
+    label {
+        color: #00BFB3;
+    }
+    
+    /* Styling for form link colour*/
+    .form-link_col {
+        color: #00BFB3;
+    }
+    
+    /* Styling for form button colour*/
+    .form-btn_col {
+        background-color: #00BFB3;
+        color: #FDFFFC;
+    }
+
+    /* Styling for Choose File button*/
+    #id_image {
+        border: none;
+    }
+
+
+/* Styling for password reset forms*/
+.accountform {
+    padding-top: 20px;
+}
+
+
+/* Styling for the mobile topbar nav*/
+    
+    /* Styling for topbar colour*/
+    .topbar_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for the topbar dropdown menu*/
+    .dropdown-menu {
+        min-width: 15rem;
+    }
+    
+    /* Styling for topbar heading colour*/
+    .topbar-heading_col {
+        color: #023436;
+    }
+    
+    /* Styling for topbar nav link colour*/
+    .topbar-nav-link_col {
+        color: #FDFFFC;
+    }
+    
+    .topbar-drop-nav-link_col {
+        color: #00BFB3;
+    }
+
+
+/* Styling for the desktop sidebar nav*/
+
+    /* Styling for sidebar colour*/
+    .sidebar_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for sidebar nav link colour*/
+    .sidebar-nav-link_col {
+        color: #FDFFFC;
+    }
+
+    /* Styling for sidebar position*/
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 100px 0 0;
+      /*box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);*/
+    }
+    
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 100px);
+      padding-top: 0.5rem;
+    }
+    
+    /* Styling for sidebar heading colour*/
+    .sidebar-heading_col {
+        color: #023436;
+    }
+
+
+/* Styling to disable link for profile menu list items*/
+.noclick  {
+  pointer-events: none;
+}
+
+
+/* Styling for profile body*/
+
+    /* Styling for profile body position*/
+    @media only screen and (min-width: 960px) {
+      .profile-body_pos {
+        padding-left: 15%;
+        /*padding-right: 15%;*/
+        }
+    }
+    
+    
+/* Styling for your details*/
+
+    /* Styling for profile  image size*/
+    .profile-image_size {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Styling for table heading colour*/
+    th {
+        color: #00BFB3;
+    }
+    
+    /* Styling for table button colour*/
+    .table-btn_col {
+        background-color: #00BFB3;
+        color: #FDFFFC;
+    }
+    
+    
+/* Styling for inbox*/
+
+    /* Styling for inbox card header colour*/
+    .card-header_col {
+        background-color: #00BFB3;
+    }
+    
+    /* Styling for inbox card link colour*/
+    .inbox-link_col {
+        color: #FDFFFC;
+    }
+    
+    /* Styling for inbox card subtitle colour*/
+    .card-text_col {
+        color: #00BFB3;
+    }
+    
+    /* Styling for inbox card responsiveness*/
+    @media only screen and (min-width: 540px) {
+        .card-header_size {
+            min-width: 343.2px;
+        }
+    }
+    
+    @media only screen and (min-width: 720px) {
+        .card-header_size {
+            min-width: 688px;
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        .card-header_size {
+            min-width: 941.5px;
+        }
+    }

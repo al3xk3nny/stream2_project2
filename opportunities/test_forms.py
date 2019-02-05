@@ -14,7 +14,25 @@ class TestOpportunitiesForms(TestCase):
         })
         self.assertTrue(form.is_valid())
     
+    
+    def test_post_form_correct_message_for_missing_title(self):
         
+        form=PostForm({
+            "title": ""
+        })
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors["title"], [u"This field is required."])
+    
+    
+    def test_post_form_correct_message_for_missing_content(self):
+        
+        form=PostForm({
+            "content": ""
+        })
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors["content"], [u"This field is required."])
+    
+    
     def test_message_form(self):
         
         form=MessageForm({
@@ -23,3 +41,21 @@ class TestOpportunitiesForms(TestCase):
             "type": "testtype"
         })
         self.assertTrue(form.is_valid())
+    
+    
+    def test_message_form_correct_message_for_missing_title(self):
+        
+        form=MessageForm({
+            "title": ""
+        })
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors["title"], [u"This field is required."])
+    
+    
+    def test_message_form_correct_message_for_missing_content(self):
+        
+        form=MessageForm({
+            "content": ""
+        })
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors["content"], [u"This field is required."])
