@@ -8,6 +8,22 @@ from .forms import PostForm, MessageForm
 class TestOpportunitiesViews(TestCase):
     
     
+    
+    def test_user_can_register(self):
+        marketer = Group.objects.create(name='marketer')
+        marketer.save()
+        response = self.client.post("/accounts/signup/?type=marketer", {
+            'username': 'test',
+            'first_name': 'test',
+            'last_name': 'user',
+            'email': 'test@email.com',
+            'password1': 'Pa55word',
+            'password2': 'Pa55word',
+            'phone_number': '+353871234567'
+        })
+        self.assertRedirects(response, '/posts/', status_code=302, 
+        target_status_code=200, fetch_redirect_response=True)    
+    
     # Add Post
     
     def test_get_write_post(self):
