@@ -7,24 +7,80 @@ from .forms import PostForm, MessageForm
 
 class TestOpportunitiesViews(TestCase):
     
-    
-    
-    def test_user_can_register(self):
-        marketer = Group.objects.create(name='marketer')
-        marketer.save()
-        response = self.client.post("/accounts/signup/?type=marketer", {
-            'username': 'test',
-            'first_name': 'test',
-            'last_name': 'user',
-            'email': 'test@email.com',
-            'password1': 'Pa55word',
-            'password2': 'Pa55word',
-            'phone_number': '+353871234567'
-        })
-        self.assertRedirects(response, '/posts/', status_code=302, 
-        target_status_code=200, fetch_redirect_response=True)    
-    
     # Add Post
+    
+    def test_get_read_posts_page_if_producer(self):
+        marketer = Group.objects.create(name="marketer")
+        marketer.save()
+        self.client.post("/accounts/signup/?type=marketer", {
+            "username": "testuser",
+            "first_name": "test",
+            "last_name": "user",
+            "email": "test@email.com",
+            "password1": "pa55word",
+            "password2": "pa55word",
+            "phone_number": "+353871234567"
+        })
+        
+        page = self.client.get("/posts/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "opportunities/post_list.html")
+    
+    
+    def test_get_read_posts_page_if_marketer(self):
+        marketer = Group.objects.create(name="producer")
+        marketer.save()
+        self.client.post("/accounts/signup/?type=producer", {
+            "username": "testuser",
+            "first_name": "test",
+            "last_name": "user",
+            "email": "test@email.com",
+            "password1": "pa55word",
+            "password2": "pa55word",
+            "phone_number": "+353871234567"
+        })
+        
+        page = self.client.get("/posts/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "opportunities/post_list.html")
+    
+    
+    def test_get_my_posts_page(self):
+        marketer = Group.objects.create(name="marketer")
+        marketer.save()
+        self.client.post("/accounts/signup/?type=marketer", {
+            "username": "testuser",
+            "first_name": "test",
+            "last_name": "user",
+            "email": "test@email.com",
+            "password1": "pa55word",
+            "password2": "pa55word",
+            "phone_number": "+353871234567"
+        })
+        
+        page = self.client.get("/posts/profile/posts/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "opportunities/my_post_list.html")
+    
+    
+    def test_get_my_inbox_page(self):
+        marketer = Group.objects.create(name="marketer")
+        marketer.save()
+        self.client.post("/accounts/signup/?type=marketer", {
+            "username": "testuser",
+            "first_name": "test",
+            "last_name": "user",
+            "email": "test@email.com",
+            "password1": "pa55word",
+            "password2": "pa55word",
+            "phone_number": "+353871234567"
+        })
+        
+        page = self.client.get("/posts/profile/inbox/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "opportunities/inbox.html")
+    
+    
     
     def test_get_write_post(self):
         test_user = User.objects.create_user(username="testuser", email="test@example.com", password="pa55word")
