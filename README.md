@@ -182,7 +182,7 @@ I would also like to thank my lecturer, Richard Dalton for his dedicated and com
 - username: alex
 - password: K4s3H$%B
 
-### Michale Park, marketer, cancelled/un-subscribed
+### Michael Park, marketer, cancelled/un-subscribed
 - username: michael
 - password: #ke5oM38
 
