@@ -14,7 +14,6 @@ Having used a NoSQL database in my third project, I wanted to make sure I correc
 
 A live version of the app can be viewed [here](https://code-inst-rightplace.herokuapp.com/), hosted on Heroku.
 
-***For convenience, I have included already created user credentials with differing permissions at the bottom of this README document.***
 
 ## UX
 
@@ -175,29 +174,3 @@ In order to run this site locally;
 ### Acknowledgements
 
 I would also like to thank my lecturer, Richard Dalton for his dedicated and competent direction throughout the duration of stream 2 and my TA, Michael Park for his advice and encouragement during this project.
-
-## Already created user creditials;
-
-### Alex Kenny, marketer, subscribed
-- username: alex
-- password: K4s3H$%B
-
-### Michael Park, marketer, cancelled/un-subscribed
-- username: michael
-- password: #ke5oM38
-
-### Jane McGrath, marketer, not subscribed
-- username: jane
-- password: 9X#9othB
-
-### Richard Dalton, producer, subscribed
-- username: richard
-- password: 9o5T!U%&
-
-### Alan O'Grady, producer, cancelled/un-subscribed
-- username: alan
-- password: ziJ6%16m
-
-### Mark O'Grady, producer, not subscribed
-- username: mark
-- password: 6zYl*#C4
